@@ -28,11 +28,22 @@ public class Unit : MonoBehaviour
             jumpForce = Mathf.Max(0, value);
         }
     }
-    
-    
+
+    [SerializeField] private bool isGrounded = false;
+    private float groundRayLength = 1.2f;
+    [SerializeField] private LayerMask groundLayer;
     
     protected Rigidbody2D rb;
     [SerializeField] protected Animator animator;
+    protected BoxCollider2D collider;
+
+    private Vector2 currentColliderSize;
+    private Vector2 currentColliderOffset;
+    private Vector2 colliderSize = new Vector2(1, 0.6f);
+    private Vector2 colliderOffset = new Vector2(0.4f, -0.6f);
+    
+    
+    
 
     protected void Awake()
     {
@@ -41,14 +52,23 @@ public class Unit : MonoBehaviour
 
         animator = GetComponentInChildren<Animator>();
         if (animator == null) { Debug.LogError("Animator가 없습니다.");}
+
+        collider = GetComponent<BoxCollider2D>();
+        if (collider == null) { Debug.LogError("BoxCollider2D가 없습니다."); }
+        
+        currentColliderSize = collider.size;
+        currentColliderOffset = collider.offset;
     }
 
     protected void Jump()
     {
         if (rb != null)
         {
-            //땅에 닿았을 때만 점프되게 할 예정
-            if (Input.GetKeyDown(KeyCode.Space))
+            //땅에 오브젝트가 닿았는지
+            isGrounded = Physics2D.Raycast(transform.position, Vector2.down, groundRayLength, groundLayer);
+            
+            //땅에 닿았을 때만 점프
+            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
             {
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             }
@@ -57,15 +77,24 @@ public class Unit : MonoBehaviour
 
     protected void Slide()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            animator.SetBool("IsSlide", true);
-        }
-
-        if (Input.GetKeyUp(KeyCode.LeftControl))
-        {
-            animator.SetBool("IsSlide", false);
-        }
+        bool pressedControl = Input.GetKey(KeyCode.LeftControl);
         
+        
+        
+        if (isGrounded)
+        {
+            if (pressedControl)
+            {
+                animator.SetBool("IsSlide", true);
+                collider.size = colliderSize;
+                collider.offset = colliderOffset;
+            }
+            else
+            {
+                animator.SetBool("IsSlide", false);
+                collider.size = currentColliderSize;
+                collider.offset = currentColliderOffset;
+            }
+        }
     }
 }
