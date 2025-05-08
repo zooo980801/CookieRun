@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: dced882aedcee504a9b46d92864e0bc8
-=======
-guid: dc728f733c71e314fa55ec548b4da3b0
->>>>>>> 7d1f2fe94fc99a2cc3a48a9cb4b65501a64bdcf3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -111,8 +107,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-<<<<<<< HEAD
-=======
     buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -126,7 +120,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
->>>>>>> 7d1f2fe94fc99a2cc3a48a9cb4b65501a64bdcf3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -140,8 +133,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-<<<<<<< HEAD
-=======
     buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -155,7 +146,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
->>>>>>> 7d1f2fe94fc99a2cc3a48a9cb4b65501a64bdcf3
     buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -168,8 +158,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< HEAD
-=======
   - serializedVersion: 3
     buildTarget: tvOS
     maxTextureSize: 2048
@@ -183,7 +171,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
->>>>>>> 7d1f2fe94fc99a2cc3a48a9cb4b65501a64bdcf3
   spriteSheet:
     serializedVersion: 2
     sprites: []
