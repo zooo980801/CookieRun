@@ -41,9 +41,6 @@ public class Unit : MonoBehaviour
     private Vector2 currentColliderOffset;
     private Vector2 colliderSize = new Vector2(1, 0.6f);
     private Vector2 colliderOffset = new Vector2(0.4f, -0.6f);
-    
-    
-    
 
     protected void Awake()
     {
@@ -78,8 +75,6 @@ public class Unit : MonoBehaviour
     protected void Slide()
     {
         bool pressedControl = Input.GetKey(KeyCode.LeftControl);
-        
-        
         
         if (isGrounded)
         {
