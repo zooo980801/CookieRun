@@ -25,7 +25,10 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null) Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
         else Destroy(gameObject);
 
         uiManager = FindObjectOfType<UIManager>();
@@ -72,7 +75,7 @@ public class GameManager : MonoBehaviour
         isGameOver = true;
         //게임정지
         Time.timeScale = 0f;
-        uiManager.SetRestart();
+        uiManager.SetGameOver();
     }
 
     public void RestartGame()
@@ -82,4 +85,15 @@ public class GameManager : MonoBehaviour
     }
     //GameOverPanel UIManager연결해주세요.
     //GameOverUI속 Button에 GameManager.RestartGame() 함수 선택해주세요.
+    //re:Ui에서 버튼클릭이벤트 연결해두고 게임매니저메소드 호출하는식으로 변경했습니다.
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f;
+    }
 }

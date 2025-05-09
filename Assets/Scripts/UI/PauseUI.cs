@@ -4,33 +4,33 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameOverUI : BaseUI
+public class PauseUI : BaseUI
 {
-    [SerializeField] private Button restartButton;
+    [SerializeField] private Button resumeButton;
+    [SerializeField] private Button retryButton;
     [SerializeField] private Button exitButton;
-
+    GameOverUI gameOverUI;
     public override void Init(UIManager uiManager)
     {
         base.Init(uiManager);
-        restartButton.onClick.AddListener(OnClickRestartButton);
+        resumeButton.onClick.AddListener(OnClickResumeButton);
+        retryButton.onClick.AddListener(OnClickRetryButton);
         exitButton.onClick.AddListener(OnClickExitButton);
     }
-
-    // 다시 시작 버튼 클릭 시 현재 씬을 다시 로드 (게임 재시작)
-    public void OnClickRestartButton()
+    public void OnClickResumeButton()
+    {
+        uimanager.HidePauseUI();
+    }
+    public void OnClickRetryButton()
     {
         GameManager.Instance.RestartGame();
     }
-
-    // 종료 버튼 클릭 시 애플리케이션 종료
     public void OnClickExitButton()
     {
-        Application.Quit();
+        gameOverUI.OnClickExitButton();
     }
-
     protected override UIState GetUIState()
     {
-        return UIState.GameOver;
+        return UIState.Pause;
     }
-
 }
