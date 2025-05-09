@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 58890277}
   - component: {fileID: 58890276}
   - component: {fileID: 58890275}
+  - component: {fileID: 58890278}
   m_Layer: 5
   m_Name: SlideButton
   m_TagString: Untagged
@@ -244,6 +245,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 58890273}
   m_CullTransparentMesh: 1
+--- !u!114 &58890278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58890273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1718757935}
+          m_TargetAssemblyTypeName: GameUI, Assembly-CSharp
+          m_MethodName: OnSlideButtonUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1718757935}
+          m_TargetAssemblyTypeName: GameUI, Assembly-CSharp
+          m_MethodName: OnSlideButtonDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &63375165
 GameObject:
   m_ObjectHideFlags: 0
@@ -1510,6 +1556,7 @@ GameObject:
   - component: {fileID: 359613383}
   - component: {fileID: 359613382}
   - component: {fileID: 359613381}
+  - component: {fileID: 359613384}
   m_Layer: 5
   m_Name: JumpButton
   m_TagString: Untagged
@@ -1619,6 +1666,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 359613379}
   m_CullTransparentMesh: 1
+--- !u!114 &359613384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359613379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1718757935}
+          m_TargetAssemblyTypeName: GameUI, Assembly-CSharp
+          m_MethodName: OnJumpButtonDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &401798670
 GameObject:
   m_ObjectHideFlags: 0
@@ -4160,6 +4236,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hpSlider: {fileID: 1180869554}
   pauseButton: {fileID: 125333187}
+  jumpButton: {fileID: 359613381}
+  SlideButton: {fileID: 58890275}
+  playerController: {fileID: 2856946954897399389, guid: bff7fd056d1abd145a938e165d9012d2, type: 3}
 --- !u!1 &1782704881
 GameObject:
   m_ObjectHideFlags: 0

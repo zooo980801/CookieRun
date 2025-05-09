@@ -24,8 +24,6 @@ public class PlayerController : Unit
         }
     }
     
-    
-    
     private void Awake()
     {
         base.Awake();
@@ -35,28 +33,26 @@ public class PlayerController : Unit
     
     private void Update()
     {
-        base.Update();
+        //땅에 오브젝트가 닿았는지
+        isGrounded = Physics2D.Raycast(transform.position, Vector2.down, groundRayLength, groundLayer);
+        
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            Jump();
+        }
+        animCtrl.JumpAnim(isGrounded);
+        
+        bool PressedShift = Input.GetKey(KeyCode.LeftShift);
+        Slide(PressedShift);
     }
     
-    protected override void Jump()
+    public override void Jump()
     {
-        if (rb != null)
-        {
-            //땅에 오브젝트가 닿았는지
-            isGrounded = Physics2D.Raycast(transform.position, Vector2.down, groundRayLength, groundLayer);
-            animCtrl.JumpAnim(isGrounded);
-            
-            //땅에 닿았을 때만 점프
-            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-            {
-                rb.AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse);
-            }
-        }
+        rb.AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse);
     }
 
-    protected override void Slide()
+    public override void Slide(bool PressedShift)
     {
-        bool pressedControl = Input.GetKey(KeyCode.LeftControl);
-        animCtrl.SlideAnim(pressedControl);
+        animCtrl.SlideAnim(PressedShift);
     }
 }

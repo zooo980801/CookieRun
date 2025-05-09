@@ -25,19 +25,17 @@ public class PlayerAnimController : MonoBehaviour
         currentColliderOffset = collider.offset;
     }
 
-    public void SlideAnim(bool pressedControl)
+    public void SlideAnim(bool PressedShift)
     {
-        switch (pressedControl)
+        if (PressedShift)
         {
-            case true:
-                ColliderCtrl(colliderSize, colliderOffset);
-                animator.SetBool("IsSlide", pressedControl);
-                break;
-            case false:
-                ColliderCtrl(currentColliderSize, currentColliderOffset);
-                animator.SetBool("IsSlide", pressedControl);
-                break;
+            ColliderCtrl(colliderSize, colliderOffset);
         }
+        else
+        {
+            ColliderCtrl(currentColliderSize, currentColliderOffset);
+        }
+        animator.SetBool("IsSlide", PressedShift);
     }
 
     public void JumpAnim(bool isGrounded)

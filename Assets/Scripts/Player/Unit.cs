@@ -17,7 +17,8 @@ public abstract class Unit : MonoBehaviour
     protected abstract float JumpForce { get; set; }
     
     //지면에 있는지, 지면과의 거리, 지면 레이어마스크
-    [SerializeField] protected bool isGrounded = false;
+    [SerializeField] public bool isGrounded = false;
+    [SerializeField] public bool PressedShift = false;
     [SerializeField] protected float groundRayLength = 1.2f;
     [SerializeField] protected LayerMask groundLayer;
     
@@ -34,13 +35,7 @@ public abstract class Unit : MonoBehaviour
         if (animCtrl == null) { Debug.LogError("PlayerAnimController가 없습니다."); }
     }
 
-    protected void Update()
-    {
-        Jump();
-        Slide();
-    }
+    public abstract void Jump();
 
-    protected abstract void Jump();
-
-    protected abstract void Slide();
+    public abstract void Slide(bool PressedShift);
 }

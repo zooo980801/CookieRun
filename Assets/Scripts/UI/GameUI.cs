@@ -7,18 +7,25 @@ public class GameUI : BaseUI
 {
     [SerializeField] private Slider hpSlider;
     [SerializeField] private Button pauseButton;
+    [SerializeField] private Button jumpButton;
+    [SerializeField] private Button SlideButton;
+
+    [SerializeField] private PlayerController playerController;
     private bool pauseActive = false;
+    private bool slideActive = false;
     public override void Init(UIManager uiManager)
     {
         base.Init(uiManager);
         pauseButton.onClick.AddListener(OnClickPauseButton);
+        //jumpButton.onClick.AddListener(OnClickJumpButton);
+        //SlideButton.onClick.AddListener(OnClickSlideButton);
     }
     private void Start()
     {
-        UpdateHPSlider(1); // ½ÃÀÛ ½Ã Ã¼·Â ½½¶óÀÌ´õ¸¦ °¡µæ Ã¤¿ò (100%)
+        UpdateHPSlider(1); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¤ï¿½ï¿½ (100%)
     }
 
-    // Ã¼·Â ½½¶óÀÌ´õ °ªÀ» ÆÛ¼¾Æ®(0~1)·Î ¼³Á¤
+    // Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Û¼ï¿½Æ®(0~1)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     public void UpdateHPSlider(float percentage)
     {
         hpSlider.value = percentage;
@@ -39,6 +46,11 @@ public class GameUI : BaseUI
             }
                 
         }
+
+        if (slideActive)
+        {
+            playerController.Slide(slideActive);
+        }
     }
     public void OnClickPauseButton()
     {
@@ -53,6 +65,45 @@ public class GameUI : BaseUI
             pauseActive = false;
         }
     }
+    // public void OnClickJumpButton()
+    // {
+    //     //ï¿½ï¿½ï¿½â¿¡ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    //     if (playerController.isGrounded)
+    //     {
+    //         playerController.Jump();
+    //     }
+    // }
+    // public void OnClickSlideButton()
+    // {
+    //     //ï¿½ï¿½ï¿½â¿¡ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½
+    //     slideActive = true;
+    // }
+
+    public void OnJumpButtonDown()
+    {
+        //ï¿½ï¿½ï¿½â¿¡ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        if (playerController.isGrounded)
+        {
+            playerController.Jump();
+        }
+    }
+    
+    public void OnSlideButtonDown()
+    {
+        slideActive = true;
+    }
+
+    public void OnSlideButtonUp()
+    {
+        slideActive = false;
+    }
+
+
+
+
+
+
+
     protected override UIState GetUIState()
     {
         return UIState.Game;
