@@ -7,7 +7,8 @@ public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
     public GameObject gameOverPanel;
-
+    GameUI gameUI;
+    GameOverUI gameOverUI;
     public void UpdateScore(int score)
     {
         scoreText.text = score.ToString();
@@ -16,4 +17,10 @@ public class UIManager : MonoBehaviour
     {
         gameOverPanel.SetActive(true);
     }
+    
+}
+public enum UIState
+{
+    Game,
+    GameOver
 }
