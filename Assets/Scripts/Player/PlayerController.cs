@@ -38,7 +38,7 @@ public class PlayerController : Unit
         base.Awake();
         Hp = 100f;
         JumpForce = 5f;
-        Speed = 0f;
+        Speed = 5f;
     }
     
     private void Update()
