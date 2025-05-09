@@ -7,11 +7,15 @@ public class GameUI : BaseUI
 {
     [SerializeField] private Slider hpSlider;
     [SerializeField] private Button pauseButton;
+    [SerializeField] private Button jumpButton;
+    [SerializeField] private Button SlideButton;
     private bool pauseActive = false;
     public override void Init(UIManager uiManager)
     {
         base.Init(uiManager);
         pauseButton.onClick.AddListener(OnClickPauseButton);
+        jumpButton.onClick.AddListener(OnClickJumpButton);
+        SlideButton.onClick.AddListener(OnClickSlideButton);
     }
     private void Start()
     {
@@ -53,6 +57,21 @@ public class GameUI : BaseUI
             pauseActive = false;
         }
     }
+    public void OnClickJumpButton()
+    {
+        //여기에 캐릭터 점프 연동
+    }
+    public void OnClickSlideButton()
+    {
+        //여기에 캐릭터 슬라이드 연동
+    }
+
+
+
+
+
+
+
     protected override UIState GetUIState()
     {
         return UIState.Game;

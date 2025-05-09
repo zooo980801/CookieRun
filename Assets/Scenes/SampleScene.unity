@@ -4160,6 +4160,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hpSlider: {fileID: 1180869554}
   pauseButton: {fileID: 125333187}
+  jumpButton: {fileID: 359613381}
+  SlideButton: {fileID: 58890275}
 --- !u!1 &1782704881
 GameObject:
   m_ObjectHideFlags: 0
