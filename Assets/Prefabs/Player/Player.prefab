@@ -64,11 +64,10 @@ MonoBehaviour:
   hp: 0
   jumpForce: 0
   isGrounded: 0
-  groundRayLength: 1
+  groundRayLength: 1.2
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  animator: {fileID: 0}
 --- !u!61 &4274772514178631636
 BoxCollider2D:
   m_ObjectHideFlags: 0
