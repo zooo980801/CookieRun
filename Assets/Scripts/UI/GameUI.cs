@@ -10,6 +10,7 @@ public class GameUI : BaseUI
     [SerializeField] private Button jumpButton;
     [SerializeField] private Button SlideButton;
     private bool pauseActive = false;
+    private bool slideActive = false;
     public override void Init(UIManager uiManager)
     {
         base.Init(uiManager);
@@ -19,10 +20,10 @@ public class GameUI : BaseUI
     }
     private void Start()
     {
-        UpdateHPSlider(1); // ½ÃÀÛ ½Ã Ã¼·Â ½½¶óÀÌ´õ¸¦ °¡µæ Ã¤¿ò (100%)
+        UpdateHPSlider(1); // ì‹œì‘ ì‹œ ì²´ë ¥ ìŠ¬ë¼ì´ë”ë¥¼ ê°€ë“ ì±„ì›€ (100%)
     }
 
-    // Ã¼·Â ½½¶óÀÌ´õ °ªÀ» ÆÛ¼¾Æ®(0~1)·Î ¼³Á¤
+    // ì²´ë ¥ ìŠ¬ë¼ì´ë” ê°’ì„ í¼ì„¼íŠ¸(0~1)ë¡œ ì„¤ì •
     public void UpdateHPSlider(float percentage)
     {
         hpSlider.value = percentage;
@@ -41,7 +42,10 @@ public class GameUI : BaseUI
                 uimanager.HidePauseUI();
                 pauseActive = false;
             }
-                
+        }
+        if (slideActive)
+        {
+            //ìŠ¬ë¼ì´ë“œ êµ¬í˜„
         }
     }
     public void OnClickPauseButton()
@@ -59,19 +63,22 @@ public class GameUI : BaseUI
     }
     public void OnClickJumpButton()
     {
-        //¿©±â¿¡ Ä³¸¯ÅÍ Á¡ÇÁ ¿¬µ¿
+        //ì—¬ê¸°ì— ìºë¦­í„° ì í”„ ì—°ë™
     }
     public void OnClickSlideButton()
     {
-        //¿©±â¿¡ Ä³¸¯ÅÍ ½½¶óÀÌµå ¿¬µ¿
+        //ì—¬ê¸°ì— ìºë¦­í„° ìŠ¬ë¼ì´ë“œ ì—°ë™
     }
 
+    public void OnPointerDown()
+    {
+        slideActive = true;
+    }
 
-
-
-
-
-
+    public void OnPointerUp()
+    {
+        slideActive = false;
+    }
     protected override UIState GetUIState()
     {
         return UIState.Game;

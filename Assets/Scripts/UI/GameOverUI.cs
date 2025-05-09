@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -16,13 +16,13 @@ public class GameOverUI : BaseUI
         exitButton.onClick.AddListener(OnClickExitButton);
     }
 
-    // ´Ù½Ã ½ÃÀÛ ¹öÆ° Å¬¸¯ ½Ã ÇöÀç ¾ÀÀ» ´Ù½Ã ·Îµå (°ÔÀÓ Àç½ÃÀÛ)
+    // ë‹¤ì‹œ ì‹œì‘ ë²„íŠ¼ í´ë¦­ ì‹œ í˜„ì¬ ì”¬ì„ ë‹¤ì‹œ ë¡œë“œ (ê²Œì„ ì¬ì‹œì‘)
     public void OnClickRestartButton()
     {
         GameManager.Instance.RestartGame();
     }
 
-    // Á¾·á ¹öÆ° Å¬¸¯ ½Ã ¾ÖÇÃ¸®ÄÉÀÌ¼Ç Á¾·á
+    // ì¢…ë£Œ ë²„íŠ¼ í´ë¦­ ì‹œ ì• í”Œë¦¬ì¼€ì´ì…˜ ì¢…ë£Œ
     public void OnClickExitButton()
     {
         Application.Quit();
