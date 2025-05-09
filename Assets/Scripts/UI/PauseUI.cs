@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,6 +10,8 @@ public class PauseUI : BaseUI
     [SerializeField] private Button resumeButton;
     [SerializeField] private Button retryButton;
     [SerializeField] private Button exitButton;
+    [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI CoinScoreText;
     GameOverUI gameOverUI;
     public override void Init(UIManager uiManager)
     {
@@ -28,6 +31,11 @@ public class PauseUI : BaseUI
     public void OnClickExitButton()
     {
         gameOverUI.OnClickExitButton();
+    }
+    public void UpdateScore()
+    {
+        scoreText.text = uimanager.scoreText.text;
+        CoinScoreText.text = uimanager.coinText.text;
     }
     protected override UIState GetUIState()
     {

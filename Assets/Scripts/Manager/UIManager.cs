@@ -6,6 +6,8 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI coinText;
+    private int coinCount;
     public GameObject gameOverPanel;
     GameUI gameUI;
     GameOverUI gameOverUI;
@@ -25,9 +27,10 @@ public class UIManager : MonoBehaviour
         ChangeState(UIState.Game);
     }
 
-    public void UpdateScore(int score)
+    public void UpdateScore(int score,int coinCount)
     {
         scoreText.text = score.ToString();
+        coinText.text = coinCount.ToString();
     }
     public void SetGameOver()
     {
@@ -44,6 +47,7 @@ public class UIManager : MonoBehaviour
     {
         GameManager.Instance.PauseGame();
         pauseUI.gameObject.SetActive(true);
+        pauseUI.UpdateScore();
     }
 
     public void HidePauseUI()

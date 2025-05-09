@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public float speedIncrease = 0.5f;
     public float playerGodModeDecrease = 0.05f;
 
+    private int coinCount = 0;
     private int score = 0;
     private UIManager uiManager;
     //UI 매니저 생성후 연결해주세요
@@ -36,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        uiManager.UpdateScore(0);
+        uiManager.UpdateScore(0,0);
     }
 
     private void Update()
@@ -65,7 +66,8 @@ public class GameManager : MonoBehaviour
         if (!isGameOver)
         {
             score += value;
-            uiManager.UpdateScore(score);
+            coinCount++;
+            uiManager.UpdateScore(score,coinCount);
         }
     }
 
