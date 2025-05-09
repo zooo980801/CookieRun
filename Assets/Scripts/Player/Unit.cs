@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TreeEditor;
 using UnityEngine;
 
 public abstract class Unit : MonoBehaviour
@@ -15,6 +16,9 @@ public abstract class Unit : MonoBehaviour
     //점프 파워
     [SerializeField] protected float jumpForce;
     protected abstract float JumpForce { get; set; }
+
+    [SerializeField] protected float speed;
+    protected abstract float Speed { get; set; }
     
     //지면에 있는지, 지면과의 거리, 지면 레이어마스크
     [SerializeField] public bool isGrounded = false;
@@ -23,6 +27,7 @@ public abstract class Unit : MonoBehaviour
     [SerializeField] protected LayerMask groundLayer;
     
     protected Rigidbody2D rb;
+    protected Transform tr;
 
     protected PlayerAnimController animCtrl;
 
@@ -33,8 +38,12 @@ public abstract class Unit : MonoBehaviour
 
         animCtrl = GetComponent<PlayerAnimController>();
         if (animCtrl == null) { Debug.LogError("PlayerAnimController가 없습니다."); }
+
+        tr = GetComponent<Transform>();
     }
 
+    public abstract void Move();
+    
     public abstract void Jump();
 
     public abstract void Slide(bool PressedShift);

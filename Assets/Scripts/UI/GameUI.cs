@@ -46,11 +46,8 @@ public class GameUI : BaseUI
             }
                 
         }
-
-        if (slideActive)
-        {
-            playerController.Slide(slideActive);
-        }
+        
+        playerController.Slide(slideActive);
     }
     public void OnClickPauseButton()
     {

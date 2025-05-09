@@ -23,12 +23,22 @@ public class PlayerController : Unit
             jumpForce = Mathf.Max(0, value);
         }
     }
-    
+
+    protected override float Speed
+    {
+        get { return speed; }
+        set
+        {
+            speed = Mathf.Max(0, value);
+        }
+    }
+
     private void Awake()
     {
         base.Awake();
         Hp = 100f;
-        jumpForce = 5f;
+        JumpForce = 5f;
+        Speed = 5f;
     }
     
     private void Update()
@@ -42,8 +52,21 @@ public class PlayerController : Unit
         }
         animCtrl.JumpAnim(isGrounded);
         
-        bool PressedShift = Input.GetKey(KeyCode.LeftShift);
-        Slide(PressedShift);
+        PressedShift = Input.GetKey(KeyCode.LeftShift);
+        if (PressedShift)
+        {
+            Slide(PressedShift);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        Move();
+    }
+
+    public override void Move()
+    {
+        tr.Translate(Vector3.right * Speed * Time.fixedDeltaTime, Space.World);
     }
     
     public override void Jump()
