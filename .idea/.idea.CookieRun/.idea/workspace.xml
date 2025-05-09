@@ -6,29 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="4bf96b87-a99e-4ec5-bd1b-e1ced3acbfe5" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CookieRun/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CookieRun/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/angel_idle_anim_f0.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/angel_idle_anim_f0.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_f_hit_anim_f0.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_f_hit_anim_f0.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_f_idle_anim_f0.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_f_idle_anim_f0.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_f_idle_anim_f1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_f_idle_anim_f1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_f_idle_anim_f2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_f_idle_anim_f2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_f_idle_anim_f3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_f_idle_anim_f3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_f_run_anim_f0.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_f_run_anim_f0.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_f_run_anim_f1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_f_run_anim_f1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_f_run_anim_f2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_f_run_anim_f2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_f_run_anim_f3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_f_run_anim_f3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_m_hit_anim_f0.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_m_hit_anim_f0.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_m_idle_anim_f0.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_m_idle_anim_f0.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_m_idle_anim_f1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_m_idle_anim_f1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_m_idle_anim_f2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_m_idle_anim_f2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_m_idle_anim_f3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_m_idle_anim_f3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_m_run_anim_f0.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_m_run_anim_f0.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_m_run_anim_f1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_m_run_anim_f1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_m_run_anim_f2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_m_run_anim_f2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_m_run_anim_f3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0x72_DungeonTilesetII_v1.7/frames/knight_m_run_anim_f3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Player.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerAnimController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerAnimController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,9 +24,6 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://D:/Sparta/250429_FlappyPlane_Project/My project/Assets/Scripts/Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Unit.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../SpartaMetaverse/Assets/02.Scripts/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../TopDownProject/TopDown_Project/Assets/Scripts/Entity/BaseController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../TopDownProject/TopDown_Project/Assets/Scripts/Entity/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -129,6 +109,10 @@
       <updated>1746683118560</updated>
       <workItem from="1746683119734" duration="2334000" />
       <workItem from="1746685500566" duration="10090000" />
+      <workItem from="1746703784535" duration="2075000" />
+      <workItem from="1746706590981" duration="688000" />
+      <workItem from="1746750759928" duration="1118000" />
+      <workItem from="1746754196117" duration="2400000" />
     </task>
     <servers />
   </component>
