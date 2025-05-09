@@ -23,40 +23,59 @@ public class PlayerController : Unit
             jumpForce = Mathf.Max(0, value);
         }
     }
-    
-    
-    
+
+    protected override float Speed
+    {
+        get { return speed; }
+        set
+        {
+            speed = Mathf.Max(0, value);
+        }
+    }
+
     private void Awake()
     {
         base.Awake();
         Hp = 100f;
-        jumpForce = 5f;
+        JumpForce = 5f;
+        Speed = 5f;
     }
     
     private void Update()
     {
-        base.Update();
-    }
-    
-    protected override void Jump()
-    {
-        if (rb != null)
+        //땅에 오브젝트가 닿았는지
+        isGrounded = Physics2D.Raycast(transform.position, Vector2.down, groundRayLength, groundLayer);
+        
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            //땅에 오브젝트가 닿았는지
-            isGrounded = Physics2D.Raycast(transform.position, Vector2.down, groundRayLength, groundLayer);
-            animCtrl.JumpAnim(isGrounded);
-            
-            //땅에 닿았을 때만 점프
-            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-            {
-                rb.AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse);
-            }
+            Jump();
+        }
+        animCtrl.JumpAnim(isGrounded);
+        
+        PressedShift = Input.GetKey(KeyCode.LeftShift);
+        if (PressedShift)
+        {
+            Slide(PressedShift);
         }
     }
 
-    protected override void Slide()
+    private void FixedUpdate()
     {
-        bool pressedControl = Input.GetKey(KeyCode.LeftControl);
-        animCtrl.SlideAnim(pressedControl);
+        Move();
+    }
+
+    public override void Move()
+    {
+        tr.Translate(Vector3.right * Speed * Time.fixedDeltaTime, Space.World);
+    }
+    
+    public override void Jump()
+    {
+        rb.AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse);
+    }
+
+    public override void Slide(bool PressedShift)
+    {
+        animCtrl.SlideAnim(PressedShift);
     }
 }

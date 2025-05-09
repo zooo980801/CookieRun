@@ -9,21 +9,23 @@ public class GameUI : BaseUI
     [SerializeField] private Button pauseButton;
     [SerializeField] private Button jumpButton;
     [SerializeField] private Button SlideButton;
+
+    [SerializeField] private PlayerController playerController;
     private bool pauseActive = false;
     private bool slideActive = false;
     public override void Init(UIManager uiManager)
     {
         base.Init(uiManager);
         pauseButton.onClick.AddListener(OnClickPauseButton);
-        jumpButton.onClick.AddListener(OnClickJumpButton);
-        SlideButton.onClick.AddListener(OnClickSlideButton);
+        //jumpButton.onClick.AddListener(OnClickJumpButton);
+        //SlideButton.onClick.AddListener(OnClickSlideButton);
     }
     private void Start()
     {
-        UpdateHPSlider(1); // 시작 시 체력 슬라이더를 가득 채움 (100%)
+        UpdateHPSlider(1); // ���� �� ü�� �����̴��� ���� ä�� (100%)
     }
 
-    // 체력 슬라이더 값을 퍼센트(0~1)로 설정
+    // ü�� �����̴� ���� �ۼ�Ʈ(0~1)�� ����
     public void UpdateHPSlider(float percentage)
     {
         hpSlider.value = percentage;
@@ -42,11 +44,10 @@ public class GameUI : BaseUI
                 uimanager.HidePauseUI();
                 pauseActive = false;
             }
+                
         }
-        if (slideActive)
-        {
-            //슬라이드 구현
-        }
+        
+        playerController.Slide(slideActive);
     }
     public void OnClickPauseButton()
     {
@@ -61,24 +62,45 @@ public class GameUI : BaseUI
             pauseActive = false;
         }
     }
-    public void OnClickJumpButton()
-    {
-        //여기에 캐릭터 점프 연동
-    }
-    public void OnClickSlideButton()
-    {
-        //여기에 캐릭터 슬라이드 연동
-    }
+    // public void OnClickJumpButton()
+    // {
+    //     //���⿡ ĳ���� ���� ����
+    //     if (playerController.isGrounded)
+    //     {
+    //         playerController.Jump();
+    //     }
+    // }
+    // public void OnClickSlideButton()
+    // {
+    //     //���⿡ ĳ���� �����̵� ����
+    //     slideActive = true;
+    // }
 
-    public void OnPointerDown()
+    public void OnJumpButtonDown()
+    {
+        //���⿡ ĳ���� ���� ����
+        if (playerController.isGrounded)
+        {
+            playerController.Jump();
+        }
+    }
+    
+    public void OnSlideButtonDown()
     {
         slideActive = true;
     }
 
-    public void OnPointerUp()
+    public void OnSlideButtonUp()
     {
         slideActive = false;
     }
+
+
+
+
+
+
+
     protected override UIState GetUIState()
     {
         return UIState.Game;
