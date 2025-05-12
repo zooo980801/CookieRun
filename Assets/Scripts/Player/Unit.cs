@@ -30,6 +30,7 @@ public abstract class Unit : MonoBehaviour
     protected Transform tr;
 
     protected PlayerAnimController animCtrl;
+    protected PlayerDistance playerDistance;
 
     protected void Awake()
     {
@@ -40,6 +41,9 @@ public abstract class Unit : MonoBehaviour
         if (animCtrl == null) { Debug.LogError("PlayerAnimController가 없습니다."); }
 
         tr = GetComponent<Transform>();
+
+        playerDistance = GetComponent<PlayerDistance>();
+        if (playerDistance == null) { Debug.LogError("PlayerDistance가 없습니다."); }
     }
 
     public abstract void Move();
@@ -47,4 +51,6 @@ public abstract class Unit : MonoBehaviour
     public abstract void Jump();
 
     public abstract void Slide(bool PressedShift);
+
+    public abstract void DecreaseHpByDistance();
 }
