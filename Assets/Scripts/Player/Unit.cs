@@ -18,7 +18,7 @@ public abstract class Unit : MonoBehaviour
     protected abstract float JumpForce { get; set; }
 
     [SerializeField] protected float speed;
-    protected abstract float Speed { get; set; }
+    public abstract float Speed { get; set; }
     
     //지면에 있는지, 지면과의 거리, 지면 레이어마스크
     [SerializeField] public bool isGrounded = false;
@@ -30,6 +30,7 @@ public abstract class Unit : MonoBehaviour
     protected Transform tr;
 
     protected PlayerAnimController animCtrl;
+    protected PlayerDistance playerDistance;
 
     protected void Awake()
     {
@@ -40,6 +41,9 @@ public abstract class Unit : MonoBehaviour
         if (animCtrl == null) { Debug.LogError("PlayerAnimController가 없습니다."); }
 
         tr = GetComponent<Transform>();
+
+        playerDistance = GetComponent<PlayerDistance>();
+        if (playerDistance == null) { Debug.LogError("PlayerDistance가 없습니다."); }
     }
 
     public abstract void Move();
@@ -47,4 +51,6 @@ public abstract class Unit : MonoBehaviour
     public abstract void Jump();
 
     public abstract void Slide(bool PressedShift);
+
+    public abstract void DecreaseHpByDistance();
 }

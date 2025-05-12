@@ -2835,6 +2835,8 @@ MonoBehaviour:
   spawnRateDecrease: 0.1
   speedIncrease: 0.5
   playerGodModeDecrease: 0.05
+  coinCount: 0
+  score: 0
 --- !u!4 &749089932
 Transform:
   m_ObjectHideFlags: 0
@@ -5164,6 +5166,10 @@ PrefabInstance:
     - target: {fileID: 5206318213154352813, guid: bff7fd056d1abd145a938e165d9012d2, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206318213154352813, guid: bff7fd056d1abd145a938e165d9012d2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7270825194058814866, guid: bff7fd056d1abd145a938e165d9012d2, type: 3}
       propertyPath: m_Layer
