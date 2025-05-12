@@ -18,6 +18,7 @@ public class WeaponManager : MonoBehaviour
 
     void Start()
     {
+        //필수과제 완료 후 진행
         foreach (var item in weaponList)
         {
             weaponDict[item.name] = item;
