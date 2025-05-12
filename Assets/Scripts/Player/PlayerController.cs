@@ -43,18 +43,19 @@ public class PlayerController : Unit
     
     private void Update()
     {
-        //거리에 따른 체력 감소
-        hp -= playerDistance.distance * 0.001f;
+        DecreaseHpByDistance();
         
-        //땅에 오브젝트가 닿았는지
+        //땅에 오브젝트가 닿았는지 확인
         isGrounded = Physics2D.Raycast(transform.position, Vector2.down, groundRayLength, groundLayer);
         
+        //점프
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             Jump();
         }
         animCtrl.JumpAnim(isGrounded);
         
+        //슬라이드
         PressedShift = Input.GetKey(KeyCode.LeftShift);
         if (PressedShift)
         {
@@ -80,5 +81,11 @@ public class PlayerController : Unit
     public override void Slide(bool PressedShift)
     {
         animCtrl.SlideAnim(PressedShift);
+    }
+
+    public override void DecreaseHpByDistance()
+    {
+        //거리에 따른 체력 감소
+        hp -= playerDistance.distance * 0.001f;
     }
 }

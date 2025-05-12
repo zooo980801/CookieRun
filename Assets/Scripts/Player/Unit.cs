@@ -51,4 +51,6 @@ public abstract class Unit : MonoBehaviour
     public abstract void Jump();
 
     public abstract void Slide(bool PressedShift);
+
+    public abstract void DecreaseHpByDistance();
 }
