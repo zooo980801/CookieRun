@@ -43,6 +43,7 @@ public class PlayerController : Unit
     
     private void Update()
     {
+        //거리에 따른 체력 감소
         hp -= playerDistance.distance * 0.001f;
         
         //땅에 오브젝트가 닿았는지
