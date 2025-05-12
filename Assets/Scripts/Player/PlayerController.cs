@@ -10,7 +10,7 @@ public class PlayerController : Unit
     private bool isDead = false;
 
     public float hitDamage = 20f; // 충돌 시 감소할 체력
-
+    public float CurrentHp => Hp;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Coin"))
@@ -23,7 +23,8 @@ public class PlayerController : Unit
 
         if (other.CompareTag("Enemy") || other.CompareTag("Obstacle"))
         {
-            TakeDamage(hitDamage);
+            //TakeDamage(hitDamage);
+            GameManager.Instance.GameOver();
         }
     }
 

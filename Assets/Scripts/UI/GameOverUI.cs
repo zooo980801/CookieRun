@@ -1,13 +1,20 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameOverUI : BaseUI
 {
+    [Header("버튼")]
     [SerializeField] private Button restartButton;
     [SerializeField] private Button exitButton;
+    [Header("점수")]
+    [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI bestScoreText;
+    [SerializeField] private TextMeshProUGUI CoinScoreText;
+    [SerializeField] private TextMeshProUGUI ObstacleScoreText;
 
     public override void Init(UIManager uiManager)
     {
@@ -22,10 +29,17 @@ public class GameOverUI : BaseUI
         GameManager.Instance.RestartGame();
     }
 
+    public void UpdateScore()
+    {
+        scoreText.text = uimanager.scoreText.text;
+        bestScoreText.text = uimanager.bestScoreText.text;
+        CoinScoreText.text = uimanager.coinText.text;
+    }
     // 종료 버튼 클릭 시 애플리케이션 종료
     public void OnClickExitButton()
     {
-        Application.Quit();
+        Time.timeScale = 1f;
+        SceneLoader.LoadScene("StartScene", "ExitFromPause");
     }
 
     protected override UIState GetUIState()

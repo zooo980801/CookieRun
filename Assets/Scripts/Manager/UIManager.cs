@@ -6,7 +6,9 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI bestScoreText;
     public TextMeshProUGUI coinText;
+
     private int coinCount;
     public GameObject gameOverPanel;
     GameUI gameUI;
@@ -27,13 +29,15 @@ public class UIManager : MonoBehaviour
         ChangeState(UIState.Game);
     }
 
-    public void UpdateScore(int score,int coinCount)
+    public void UpdateScore(int score,int bestScore,int coinCount)
     {
         scoreText.text = score.ToString();
+        bestScoreText.text = bestScore.ToString();
         coinText.text = coinCount.ToString();
     }
     public void SetGameOver()
     {
+        gameOverUI.UpdateScore();
         ChangeState(UIState.GameOver);
     }
     public void ChangeState(UIState state)

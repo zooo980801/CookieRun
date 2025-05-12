@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
     {
         player = FindObjectOfType<PlayerController>();
         LoadBestScore();
-        uiManager.UpdateScore(0, 0);
+        uiManager.UpdateScore(0, BestScore, 0);
 
         if (player != null)
             player.ActivateGodMode(playerGodMode); // ★ 무적 모드 적용
@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
         {
             score += value;
             coinCount++;
-            uiManager.UpdateScore(score,coinCount);
+            uiManager.UpdateScore(score, BestScore, coinCount);
         }
     }
 
@@ -98,6 +98,7 @@ public class GameManager : MonoBehaviour
         //게임정지
         SaveBestScore();
 
+        uiManager.UpdateScore(score, BestScore, coinCount);
         Time.timeScale = 0f;
         PlayerController player = FindObjectOfType<PlayerController>();
         if (player != null)
