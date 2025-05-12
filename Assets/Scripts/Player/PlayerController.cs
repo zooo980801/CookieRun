@@ -12,6 +12,7 @@ public class PlayerController : Unit
     public float hitDamage = 20f; // 충돌 시 감소할 체력
     public float damageByTime = 0.001f; //시간에 따른 감소 체력
 
+    public float CurrentHp => Hp;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Coin"))
@@ -152,5 +153,6 @@ public class PlayerController : Unit
     {
         //시간에 따른 체력 감소
         Hp -= damageByTime * Time.deltaTime;
+        Debug.Log(Hp);
     }
 }

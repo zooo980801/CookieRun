@@ -14,6 +14,8 @@ public class GameUI : BaseUI
 
     private bool pauseActive = false;
     private bool slideActive = false;
+
+
     public override void Init(UIManager uiManager)
     {
         base.Init(uiManager);
