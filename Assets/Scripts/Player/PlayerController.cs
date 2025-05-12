@@ -10,6 +10,7 @@ public class PlayerController : Unit
     private bool isDead = false;
 
     public float hitDamage = 20f; // 충돌 시 감소할 체력
+    public float damageByTime = 0.001f; //시간에 따른 감소 체력
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -77,7 +78,7 @@ public class PlayerController : Unit
 
     private void Update()
     {
-        DecreaseHpByDistance();
+        DecreaseHpByTime();
         
         //땅에 오브젝트가 닿았는지 확인
         isGrounded = Physics2D.Raycast(transform.position, Vector2.down, groundRayLength, groundLayer);
@@ -147,9 +148,9 @@ public class PlayerController : Unit
             yield return new WaitForSeconds(0.1f);
         }
     }
-    public override void DecreaseHpByDistance()
+    public override void DecreaseHpByTime()
     {
-        //거리에 따른 체력 감소
-        hp -= playerDistance.distance * 0.001f;
+        //시간에 따른 체력 감소
+        Hp -= damageByTime * Time.deltaTime;
     }
 }
