@@ -11,6 +11,7 @@ public class GameUI : BaseUI
     [SerializeField] private Button SlideButton;
 
     [SerializeField] private PlayerController playerController;
+
     private bool pauseActive = false;
     private bool slideActive = false;
     public override void Init(UIManager uiManager)
@@ -22,16 +23,16 @@ public class GameUI : BaseUI
     }
     private void Start()
     {
-        UpdateHPSlider(1); // ���� �� ü�� �����̴��� ���� ä�� (100%)
+        UpdateHPSlider(1); 
     }
 
-    // ü�� �����̴� ���� �ۼ�Ʈ(0~1)�� ����
-    public void UpdateHPSlider(float percentage)
+    public void UpdateHPSlider(float hp)
     {
-        hpSlider.value = percentage;
+        hpSlider.value = hp /100f;
     }
     private void Update()
     {
+        UpdateHPSlider(playerController.CurrentHp);
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (pauseActive == false)

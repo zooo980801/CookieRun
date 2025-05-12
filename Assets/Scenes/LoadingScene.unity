@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progressBar: {fileID: 1499473110}
-  fakeLoadSpeed: 0.5
+  fakeLoadSpeed: 3
   objects:
   - {fileID: 2044647249}
   - {fileID: 641172428}
