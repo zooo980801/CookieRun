@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneLoader.LoadScene(SceneManager.GetActiveScene().name);
     }
     //GameOverPanel UIManager연결해주세요.
     //GameOverUI속 Button에 GameManager.RestartGame() 함수 선택해주세요.
