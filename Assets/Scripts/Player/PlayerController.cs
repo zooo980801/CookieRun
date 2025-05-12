@@ -146,6 +146,8 @@ public class PlayerController : Unit
             sr.color = Color.white;
             yield return new WaitForSeconds(0.1f);
         }
+    }
+
     public override void DecreaseHpByDistance()
     {
         //거리에 따른 체력 감소
