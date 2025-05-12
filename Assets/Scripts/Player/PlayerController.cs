@@ -43,6 +43,8 @@ public class PlayerController : Unit
     
     private void Update()
     {
+        hp -= playerDistance.distance * 0.001f;
+        
         //땅에 오브젝트가 닿았는지
         isGrounded = Physics2D.Raycast(transform.position, Vector2.down, groundRayLength, groundLayer);
         
