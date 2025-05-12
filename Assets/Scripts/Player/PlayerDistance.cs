@@ -16,7 +16,5 @@ public class PlayerDistance : MonoBehaviour
     void Update()
     {
         distance = transform.position.x - startPosX;
-        
-        Console.WriteLine(distance);
     }
 }
