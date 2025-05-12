@@ -30,7 +30,8 @@ public class PauseUI : BaseUI
     }
     public void OnClickExitButton()
     {
-        gameOverUI.OnClickExitButton();
+        Time.timeScale = 1f;
+        SceneLoader.LoadScene("StartScene", "ExitFromPause");
     }
     public void UpdateScore()
     {
