@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3559510346997028720}
   - component: {fileID: 3445333331457451825}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8200250386975034964}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 31047bee51cceba479475e33769ed172, type: 3}
   m_Color: {r: 0.76729554, g: 0.6652826, b: 0.28713253, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,10 +95,9 @@ GameObject:
   - component: {fileID: 8200250386975034964}
   - component: {fileID: 6467869986024782064}
   - component: {fileID: 8222753674070273119}
-  - component: {fileID: 4655791617369467989}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Coin
-  m_TagString: Untagged
+  m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,16 +180,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4655791617369467989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9183902994758284726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f5d669f1badaaa43849cb49a00662e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreValue: 10

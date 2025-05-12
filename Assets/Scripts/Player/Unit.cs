@@ -18,7 +18,7 @@ public abstract class Unit : MonoBehaviour
     protected abstract float JumpForce { get; set; }
 
     [SerializeField] protected float speed;
-    protected abstract float Speed { get; set; }
+    public abstract float Speed { get; set; }
     
     //지면에 있는지, 지면과의 거리, 지면 레이어마스크
     [SerializeField] public bool isGrounded = false;

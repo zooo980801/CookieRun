@@ -2833,6 +2833,8 @@ MonoBehaviour:
   spawnRateDecrease: 0.1
   speedIncrease: 0.5
   playerGodModeDecrease: 0.05
+  coinCount: 0
+  score: 0
 --- !u!4 &749089932
 Transform:
   m_ObjectHideFlags: 0
