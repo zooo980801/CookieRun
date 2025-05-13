@@ -27,8 +27,10 @@ public class HealItem : Item, IItemEffect
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Trigger entered: " + other.name);
         if (other.CompareTag("Player"))
         {
+            Debug.Log("Player detected!");
             var player = other.GetComponent<PlayerController>();
             if (player != null)
             {

@@ -3858,9 +3858,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 4397843028230357632, guid: cca33de6fd2fb434bba0c1b2712b6aca, type: 3}
   healItemPrefab: {fileID: 936471770249398814, guid: cae5ed393ac1b2d4ebce97b03685693a, type: 3}
-  SpeedUpPrefab: {fileID: 470964938979987682, guid: c8f47ecbfa77a99478e571873db212f9, type: 3}
-  SpeedDownPrefab: {fileID: 8650349551632361918, guid: 15854d04127dd8c4c94f2261aceaa516, type: 3}
-  jsonFile: {fileID: 4900000, guid: b57fb18a0921c6942ada518a65dba91c, type: 3}
+  speedUpPrefab: {fileID: 470964938979987682, guid: c8f47ecbfa77a99478e571873db212f9, type: 3}
+  speedDownPrefab: {fileID: 8650349551632361918, guid: 15854d04127dd8c4c94f2261aceaa516, type: 3}
+  spawnInterval: 5
 --- !u!4 &1166713474
 Transform:
   m_ObjectHideFlags: 0
@@ -3910,99 +3910,143 @@ MonoBehaviour:
     - Difficulty: 0
       GroundData:
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       GroundObjectData:
       - skin: 0
         value: 0
+        Position: {x: 0, y: 0, z: 0}
         type: 0
         ObjectType: 0
     - Difficulty: 0
       GroundData:
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 0
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 0
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 0
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 0
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 0
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       - Skin: 0
+        Position: {x: 0, y: 0, z: 0}
         IsActive: 1
       GroundObjectData:
       - skin: 0
         value: 0
+        Position: {x: 0, y: 0, z: 0}
         type: 0
         ObjectType: 0
   groundPrefab: {fileID: 3636418211687590359, guid: 6512fcb316e394d42900ab040d0405dd, type: 3}
