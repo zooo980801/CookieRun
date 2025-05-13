@@ -154,6 +154,7 @@ public class PlayerController : Unit
             return;
         }
 
+        SFXManager.Instance.JumpSFX();
         rb.velocity = new Vector2(rb.velocity.x, 0f);
         rb.AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse);
         currentJumpCount++;

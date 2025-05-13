@@ -105,6 +105,7 @@ public class GameManager : MonoBehaviour
         if (player != null)
             player.enabled = false;
         uiManager.SetGameOver();
+        SFXManager.Instance.HitSFX();
     }
 
     public void RestartGame()

@@ -8,6 +8,7 @@ public class SFXManager : MonoBehaviour
 {
     public AudioClip coinClip;
     public AudioClip hitClip;
+    public AudioClip jumpClip;
 
     private AudioSource audioSource;
 
@@ -28,16 +29,6 @@ public class SFXManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
     public void CoinSFX()
     {
         audioSource.PlayOneShot(coinClip);
@@ -46,5 +37,10 @@ public class SFXManager : MonoBehaviour
     public void HitSFX()
     {
         audioSource.PlayOneShot(hitClip);
+    }
+
+    public void JumpSFX()
+    {
+        audioSource.PlayOneShot(jumpClip);
     }
 }
