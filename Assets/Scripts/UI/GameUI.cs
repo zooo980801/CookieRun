@@ -81,13 +81,9 @@ public class GameUI : BaseUI
 
     public void OnJumpButtonDown()
     {
-        //���⿡ ĳ���� ���� ����
-        if (playerController.isGrounded)
-        {
-            playerController.Jump();
-        }
+        playerController.Jump(); // ← 점프 제한은 내부에서 currentJumpCount로 처리함
     }
-    
+
     public void OnSlideButtonDown()
     {
         slideActive = true;

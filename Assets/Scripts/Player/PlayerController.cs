@@ -9,8 +9,12 @@ public class PlayerController : Unit
     private float godModeTimer = 0f;
     private bool isDead = false;
 
+    [SerializeField] private int maxJumpCount = 2; // 최대 점프 횟수
+    private int currentJumpCount = 0;
+
     public float hitDamage = 20f; // 충돌 시 감소할 체력
     public float damageByTime = 0.001f; //시간에 따른 감소 체력
+    private bool wasGroundedLastFrame = false;
 
     public float CurrentHp => Hp;
     private void OnTriggerEnter2D(Collider2D other)
@@ -80,14 +84,21 @@ public class PlayerController : Unit
     private void Update()
     {
         DecreaseHpByTime();
-        
+
         //땅에 오브젝트가 닿았는지 확인
         isGrounded = Physics2D.Raycast(transform.position, Vector2.down, groundRayLength, groundLayer);
-        
-        //점프
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        Debug.DrawRay(transform.position, Vector2.down * groundRayLength, Color.red);
+
+        if (isGrounded && !wasGroundedLastFrame)
         {
-            Jump();
+            Debug.Log("진짜 착지! 점프 카운트 리셋");
+            currentJumpCount = 0;
+        }
+        wasGroundedLastFrame = isGrounded;
+        //점프
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Jump(); 
         }
 
         animCtrl.JumpAnim(isGrounded);
@@ -123,7 +134,17 @@ public class PlayerController : Unit
 
     public override void Jump()
     {
+        if (currentJumpCount >= maxJumpCount)
+        {
+            Debug.Log("점프 불가: currentJumpCount = " + currentJumpCount);
+            return;
+        }
+
+        rb.velocity = new Vector2(rb.velocity.x, 0f);
         rb.AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse);
+        currentJumpCount++;
+
+        Debug.Log("점프! currentJumpCount = " + currentJumpCount);
     }
 
     public override void Slide(bool PressedShift)
