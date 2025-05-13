@@ -21,12 +21,17 @@ public class PlayerController : Unit
             Destroy(other.gameObject);
             return;
         }
+        if(other.CompareTag("Item"))
+        {
+            
+        }
         if (isGodMode || isDead) return;
 
         if (other.CompareTag("Enemy") || other.CompareTag("Obstacle"))
         {
             TakeDamage(hitDamage);
         }
+        
     }
 
     private void TakeDamage(float amount)

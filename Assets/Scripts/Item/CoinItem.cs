@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CoinItem : Item
 {
-    public float value = 10f;
+    public float value = 12f;
     [SerializeField]
     private SpriteRenderer _renderer;
     [SerializeField]
@@ -29,6 +29,7 @@ public class CoinItem : Item
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log($"[CoinItem] Trigger with: {other.gameObject.name}");
         if (other.CompareTag("Player"))
         {
             ApplyEffect();
