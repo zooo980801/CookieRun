@@ -155,4 +155,22 @@ public class PlayerController : Unit
         Hp -= damageByTime * Time.deltaTime;
         
     }
+
+    public void Heal(float amount)
+    {
+        if (100f - Hp < amount)
+        {
+            Hp += amount - (100f - Hp);
+        }
+        else
+        {
+            Hp += amount;
+        }
+
+    }
+
+    public void SpeedChange(float amount)
+    {
+        Speed += amount;
+    }
 }
