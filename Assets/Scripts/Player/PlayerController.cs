@@ -13,7 +13,8 @@ public class PlayerController : Unit
     private int currentJumpCount = 0;
 
     public float hitDamage = 20f; // 충돌 시 감소할 체력
-    public float damageByTime = 0.001f; //시간에 따른 감소 체력
+    public float damageByTime = 5f; //시간에 따른 감소 체력
+    private float limitPosY = -20f;
     private bool wasGroundedLastFrame = false;
 
     public float CurrentHp => Hp;
@@ -44,6 +45,16 @@ public class PlayerController : Unit
         }
 
         ActivateGodMode(GameManager.Instance.playerGodMode);
+    }
+
+    private void Fall()
+    {
+        if (transform.position.y < limitPosY)
+        {
+            Hp = 0f;
+            isDead = true;
+            GameManager.Instance.GameOver();
+        }
     }
 
     protected override float Hp
@@ -84,6 +95,7 @@ public class PlayerController : Unit
     private void Update()
     {
         DecreaseHpByTime();
+        Fall();     //낙하 게임오버
 
         //땅에 오브젝트가 닿았는지 확인
         isGrounded = Physics2D.Raycast(transform.position, Vector2.down, groundRayLength, groundLayer);
