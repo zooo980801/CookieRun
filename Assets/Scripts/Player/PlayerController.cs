@@ -153,6 +153,6 @@ public class PlayerController : Unit
     {
         //시간에 따른 체력 감소
         Hp -= damageByTime * Time.deltaTime;
-        Debug.Log(Hp);
+        
     }
 }
