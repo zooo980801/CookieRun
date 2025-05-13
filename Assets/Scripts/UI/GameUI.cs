@@ -81,7 +81,7 @@ public class GameUI : BaseUI
 
     public void OnJumpButtonDown()
     {
-        //���⿡ ĳ���� ���� ����
+        
         if (playerController.isGrounded)
         {
             playerController.Jump();

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2897276289456902329}
   - component: {fileID: 9173485011177497438}
   - component: {fileID: 3649325321731237054}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 2851499566344970005}
   - component: {fileID: 2091677667812834565}
   - component: {fileID: -1627437782265131087}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Heal
   m_TagString: Item
   m_Icon: {fileID: 0}

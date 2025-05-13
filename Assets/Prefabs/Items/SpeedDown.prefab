@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6462976277688645144}
   - component: {fileID: 1029480981530329320}
   - component: {fileID: 6780133815091964580}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 5496119722929384712}
   - component: {fileID: 2996108185680826448}
   - component: {fileID: 9191148681586582054}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpeedDown
   m_TagString: Item
   m_Icon: {fileID: 0}

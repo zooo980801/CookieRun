@@ -19,7 +19,7 @@ public class MapData
 public class GroundData
 {
     public int Skin;
-    public Vector3 Position;
+    public UnityEngine.Vector3 Position;
     public bool IsActive;
 }
 
@@ -28,7 +28,7 @@ public class GroundObjectData
 {
     public int skin;
     public float value;
-    public Vector3 Position;
+    public UnityEngine.Vector3 Position;
     public int type;
     public int ObjectType;
 }
