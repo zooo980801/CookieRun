@@ -23,6 +23,7 @@ public class PlayerController : Unit
         if (other.CompareTag("Coin"))
         {
             GameManager.Instance.AddScore(10);
+            SFXManager.Instance.CoinSFX();
             Destroy(other.gameObject);
             return;
         }
@@ -30,6 +31,7 @@ public class PlayerController : Unit
 
         if (other.CompareTag("Enemy") || other.CompareTag("Obstacle"))
         {
+            SFXManager.Instance.HitSFX();
             TakeDamage(hitDamage);
         }
     }

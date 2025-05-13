@@ -10,7 +10,7 @@ public class BGMManager : MonoBehaviour
 
     private AudioSource audioSource;
 
-    private static BGMManager instance;
+    public static BGMManager instance;
 
     void Awake()
     {
