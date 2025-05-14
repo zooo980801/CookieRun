@@ -6,6 +6,7 @@ public class ObstarcleObject : Item
     private SpriteRenderer _renderer;
 
     [SerializeField]
+    private GroundObjectData data;
     private GroundObjectData _data
     {
         get { return data; }

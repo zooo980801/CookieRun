@@ -24,19 +24,6 @@ public class PlayerController : Unit
     private float defaultSpeed;
     private Coroutine speedCoroutine;
 
-    private void TakeDamage(float amount)
-    {
-        Hp -= amount;
-        if (Hp <= 0)
-        {
-            isDead = true;
-            GameManager.Instance.GameOver();
-            return;
-        }
-
-        ActivateGodMode(GameManager.Instance.playerGodMode);
-    }
-
     private void Fall()
     {
         if (transform.position.y < limitPosY)
@@ -223,7 +210,7 @@ public class PlayerController : Unit
 
     public void Damaged(float amount)
     {
-        if (isGodMode || isDead) return; // 무적 또는 죽었으면 무시
+        if (isGodMode || isDead) return;
 
         Hp -= amount;
 
@@ -236,6 +223,14 @@ public class PlayerController : Unit
         }
 
         ActivateGodMode(GameManager.Instance.playerGodMode);
+
+        // 튜토리얼 단계 처리 추가
+        if (TutorialManager.Instance != null &&
+            TutorialManager.Instance.IsCurrentStep(TutorialStep.TakeDamage))
+        {
+            TutorialManager.Instance.AdvanceStep();
+        }
+
         Debug.Log($"체력: {Hp} (무적 모드 활성화됨)");
     }
 
