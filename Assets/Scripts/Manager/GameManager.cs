@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+
         timeSinceLastDifficultyIncrease += Time.deltaTime;
 
         if (timeSinceLastDifficultyIncrease >= difficultyIncreaseInterval)

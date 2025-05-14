@@ -35,6 +35,13 @@ public class PlayerController : Unit
             Destroy(other.gameObject);
             return;
         }
+
+        if (other.CompareTag("Potion"))
+        {
+            Heal(30); // 예시: 체력 30 회복
+            Destroy(other.gameObject);
+            return;
+        }
         if (isGodMode || isDead) return;
 
         if (other.CompareTag("Enemy") || other.CompareTag("Obstacle"))
@@ -208,6 +215,11 @@ public class PlayerController : Unit
             sr.color = Color.white;
             yield return new WaitForSeconds(0.1f);
         }
+    }
+    private void Heal(float amount)
+    {
+        Hp = Mathf.Min(Hp + amount, fullHP);
+        Debug.Log("체력 회복됨: " + amount + ", 현재 체력: " + Hp);
     }
     public override void DecreaseHpByTime()
     {
