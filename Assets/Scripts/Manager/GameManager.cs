@@ -153,6 +153,7 @@ public class GameManager : MonoBehaviour
     }
     private void LoadBestScore()
     {
+        Debug.Log("불러오기");
         TextAsset jsonText = Resources.Load<TextAsset>(dataPath);
         if (jsonText != null)
         {
