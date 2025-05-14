@@ -3765,6 +3765,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   restartButton: {fileID: 1878885388}
   exitButton: {fileID: 1669618182}
+  tutoExitButton: {fileID: 0}
   scoreText: {fileID: 63375167}
   bestScoreText: {fileID: 25038084}
   CoinScoreText: {fileID: 297242780}
@@ -3861,6 +3862,7 @@ MonoBehaviour:
   speedUpPrefab: {fileID: 470964938979987682, guid: c8f47ecbfa77a99478e571873db212f9, type: 3}
   speedDownPrefab: {fileID: 8650349551632361918, guid: 15854d04127dd8c4c94f2261aceaa516, type: 3}
   groundManager: {fileID: 1177246897}
+  playerTransform: {fileID: 0}
   spawnInterval: 5
 --- !u!4 &1166713474
 Transform:
@@ -5641,6 +5643,10 @@ PrefabInstance:
     - target: {fileID: 442805183299362298, guid: bff7fd056d1abd145a938e165d9012d2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2856946954897399389, guid: bff7fd056d1abd145a938e165d9012d2, type: 3}
+      propertyPath: isGrounded
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2856946954897399389, guid: bff7fd056d1abd145a938e165d9012d2, type: 3}
       propertyPath: damageByTime
