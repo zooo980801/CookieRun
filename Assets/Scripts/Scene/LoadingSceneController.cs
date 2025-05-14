@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.TextCore.Text;
@@ -11,11 +12,14 @@ public class LoadingSceneController : MonoBehaviour
     [Header("로딩 연출")]
     public Slider progressBar;
     public float fakeLoadSpeed = 3f;// 조절 가능한 가짜 로딩 속도
-    
+    public TextMeshProUGUI loadingText;
     [Header("캐릭터 연출")]
     public GameObject[] objects;
     int objectSelect;
+   
     
+    private bool isSceneLoadingDone = false;
+
     void Start()
     {
         objectSelect = Random.Range(0, 3);
@@ -23,8 +27,8 @@ public class LoadingSceneController : MonoBehaviour
         {
             objects[i].SetActive(false); // 모든 캐릭터 비활성화
         }
-        
-            StartCoroutine(LoadNextScene());
+        StartCoroutine(AnimateLoadingText());
+        StartCoroutine(LoadNextScene());
         
     }
     IEnumerator LoadNextScene()
@@ -56,6 +60,17 @@ public class LoadingSceneController : MonoBehaviour
 
         // 약간의 지연 후 씬 전환
         yield return new WaitForSeconds(0.3f);
+        isSceneLoadingDone = true;
         op.allowSceneActivation = true;
+    }
+    IEnumerator AnimateLoadingText()
+    {
+        int dotCount = 0;
+        while (!isSceneLoadingDone)
+        {
+            dotCount = (dotCount + 1) % 4; // 0~3 반복
+            loadingText.text = "Loading" + new string('.', dotCount);
+            yield return new WaitForSeconds(0.5f); // 텍스트 변경 간격
+        }
     }
 }

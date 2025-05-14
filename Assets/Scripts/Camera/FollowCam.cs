@@ -10,14 +10,15 @@ public class FollowCam : MonoBehaviour
     
     private Vector3 playerPos;
     private Vector3 camOffset;
-    
+
     private void Awake()
     {
         if (playerTransform == null)
-        {
-            Debug.LogError("playerTransform이 없습니다.");
-        }
-        
+            playerTransform = GameObject.FindGameObjectWithTag("Player")?.transform;
+
+        if (playerTransform == null)
+            Debug.LogError("playerTransform을 찾을 수 없습니다.");
+
         camOffset = new Vector3(5f, 0f, -10f);
     }
     

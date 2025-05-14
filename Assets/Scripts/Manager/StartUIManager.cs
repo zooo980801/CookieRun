@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -10,14 +10,21 @@ public class StartUIManager : MonoBehaviour
     private void Awake()
     {
         startUI = GetComponentInChildren<StartUI>(true);
-        startUI.Init(this);
         optionUI = GetComponentInChildren<OptionUI>(true);
-        optionUI.Init(this);
+        
     }
-
+    private void Start()
+    {
+        startUI.Init(this);
+        optionUI.Init(this); 
+    }
     public void StartGame()
     {
         StartSceneManager.Instance.StartGame();
+    }
+    public void StartTutorial()
+    {
+        StartSceneManager.Instance.StartTutorial();
     }
 
     public void ShowOptionUI()

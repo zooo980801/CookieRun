@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     public float speedIncrease = 0.5f;
     public float playerGodModeDecrease = 0.05f;
 
+
     public int coinCount = 0;
     public int score = 0;
     private UIManager uiManager;
@@ -104,6 +105,7 @@ public class GameManager : MonoBehaviour
         if (player != null)
             player.enabled = false;
         uiManager.SetGameOver();
+        SFXManager.Instance.HitSFX();
     }
 
     public void RestartGame()
