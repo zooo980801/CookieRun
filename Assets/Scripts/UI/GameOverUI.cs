@@ -22,7 +22,7 @@ public class GameOverUI : BaseUI
         base.Init(uiManager);
         restartButton.onClick.AddListener(OnClickRestartButton);
         exitButton.onClick.AddListener(OnClickExitButton);
-        tutoExitButton.onClick.AddListener(OnClickExitButton);
+        tutoExitButton?.onClick.AddListener(OnClickExitButton);
     }
 
     // 다시 시작 버튼 클릭 시 현재 씬을 다시 로드 (게임 재시작)
