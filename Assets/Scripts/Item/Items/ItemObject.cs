@@ -40,12 +40,12 @@ public class ItemObject : Item, IItemEffect
                 }
             case 2:
                 {
-                    player.SpeedChange(_data.value);
+                    player.SpeedChangeTemporary(_data.value, 2f);
                     break;
                 }
             case 3:
                 {
-                    player.SpeedChange(_data.value);
+                    player.SpeedChangeTemporary(_data.value, 2f);
                     break;
                 }
         }

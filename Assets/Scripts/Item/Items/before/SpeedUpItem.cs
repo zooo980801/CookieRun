@@ -23,7 +23,7 @@ public class SpeedUpItem : Item, IItemEffect
     public void ApplyEffect(PlayerController player)
     {
      
-        player.SpeedChange(speedUp); 
+        player.SpeedChangeTemporary(speedUp); 
 
     }
 

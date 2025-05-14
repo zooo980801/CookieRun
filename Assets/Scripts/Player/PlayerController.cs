@@ -20,6 +20,10 @@ public class PlayerController : Unit
     private bool wasGroundedLastFrame = false;
 
     public float CurrentHp => Hp;
+
+    private float defaultSpeed;
+    private Coroutine speedCoroutine;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Coin"))
@@ -105,6 +109,7 @@ public class PlayerController : Unit
         Hp = 100f;
         JumpForce = 6f;
         Speed = 5f;
+        defaultSpeed = Speed;
 
         tutorialManager = FindObjectOfType<TutorialManager>();
     }
@@ -228,9 +233,21 @@ public class PlayerController : Unit
 
     }
 
-    public void SpeedChange(float amount)
+    public void SpeedChangeTemporary(float amount, float duration = 2f)
     {
-        Speed += amount;
+        if (speedCoroutine != null)
+            StopCoroutine(speedCoroutine);
+
+        speedCoroutine = StartCoroutine(TemporarySpeedChange(amount, duration));
+    }
+
+    private IEnumerator TemporarySpeedChange(float amount, float duration)
+    {
+        Speed = defaultSpeed + amount;
+
+        yield return new WaitForSeconds(duration);
+
+        Speed = defaultSpeed;
     }
 
     public void Damaged(float amount)

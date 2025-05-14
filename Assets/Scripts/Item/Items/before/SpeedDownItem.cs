@@ -22,7 +22,7 @@ public class SpeedDownItem : Item, IItemEffect
 
     public void ApplyEffect(PlayerController player)
     {
-        player.SpeedChange(speedDown);
+        player.SpeedChangeTemporary(speedDown);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
