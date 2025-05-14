@@ -3976,7 +3976,7 @@ MonoBehaviour:
       - IsActive: 1
       GroundObjectData:
       - skin: 1
-        value: 2
+        value: 20
         Position: 14
         PositionY: 0
         type: 1
@@ -4007,19 +4007,19 @@ MonoBehaviour:
       - IsActive: 1
       GroundObjectData:
       - skin: 0
-        value: 0
+        value: 10
         Position: 5
         PositionY: 0
         type: 0
         ObjectType: 0
-      - skin: 0
-        value: 0
+      - skin: 1
+        value: 20
         Position: 10
         PositionY: 0
-        type: 0
+        type: 1
         ObjectType: 0
       - skin: 0
-        value: 0
+        value: 1.5
         Position: 15
         PositionY: 0
         type: 0
@@ -4062,31 +4062,31 @@ MonoBehaviour:
         type: 0
         ObjectType: 1
       - skin: 0
-        value: 0
+        value: 10
         Position: 8
         PositionY: 1
         type: 0
         ObjectType: 1
       - skin: 0
-        value: 0
+        value: 10
         Position: 9
         PositionY: 2
         type: 0
         ObjectType: 1
       - skin: 0
-        value: 0
+        value: 10
         Position: 10
         PositionY: 3
         type: 0
         ObjectType: 1
       - skin: 0
-        value: 0
+        value: 10
         Position: 11
         PositionY: 2
         type: 0
         ObjectType: 1
       - skin: 0
-        value: 0
+        value: 10
         Position: 12
         PositionY: 1
         type: 0
