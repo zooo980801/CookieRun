@@ -30,7 +30,7 @@ public class ItemObject : Item, IItemEffect
             case 0:
                 {
                     Debug.Log("코인 값:" + _data.value);
-                    GameManager.Instance.AddScore(10);
+                    GameManager.Instance.AddScore((int)_data.value);
                     break;
                 }
             case 1:

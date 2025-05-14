@@ -3964,7 +3964,7 @@ MonoBehaviour:
         type: 0
         ObjectType: 0
       - skin: 0
-        value: 1
+        value: 10
         Position: 12
         type: 0
         ObjectType: 1
@@ -3983,109 +3983,6 @@ MonoBehaviour:
         Position: 18
         type: 3
         ObjectType: 1
-    - Difficulty: 0
-      GroundData:
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      GroundObjectData:
-      - skin: 0
-        value: 10
-        Position: 10
-        type: 1
-        ObjectType: 0
-      - skin: 0
-        value: 1
-        Position: 12
-        type: 0
-        ObjectType: 1
-      - skin: 0
-        value: 2
-        Position: 14
-        type: 1
-        ObjectType: 1
-      - skin: 0
-        value: -1.5
-        Position: 16
-        type: 2
-        ObjectType: 1
-      - skin: 0
-        value: 1.5
-        Position: 18
-        type: 3
-        ObjectType: 1
-    - Difficulty: 0
-      GroundData:
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      - IsActive: 1
-      GroundObjectData:
-      - skin: 0
-        value: 10
-        Position: 10
-        type: 1
-        ObjectType: 0
-      - skin: 0
-        value: 1
-        Position: 12
-        type: 0
-        ObjectType: 1
-      - skin: 0
-        value: 2
-        Position: 14
-        type: 1
-        ObjectType: 1
-      - skin: 0
-        value: -1.5
-        Position: 16
-        type: 2
-        ObjectType: 1
-      - skin: 0
-        value: 1.5
-        Position: 18
-        type: 3
-        ObjectType: 1
-      - skin: 0
-        value: 10
-        Position: 19
-        type: 1
-        ObjectType: 0
   groundPrefab: {fileID: 3636418211687590359, guid: 6512fcb316e394d42900ab040d0405dd, type: 3}
   initialGroundCount: 10
   groundPosX: -30
