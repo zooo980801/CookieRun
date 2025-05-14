@@ -90,8 +90,6 @@ public class GameUI : BaseUI
 
     public void OnJumpButtonDown()
     {
-        
-        if (playerController.isGrounded)
         playerController.Jump(); // 점프
         if (TutorialManager.Instance != null && TutorialManager.Instance.IsCurrentStep(TutorialStep.Jump))
         {

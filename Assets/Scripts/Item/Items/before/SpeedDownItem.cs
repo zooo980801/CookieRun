@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealItem : Item, IItemEffect
+public class SpeedDownItem : Item, IItemEffect
 {
-    public float value = 15f;
+    public float speedDown = -1.5f;
     [SerializeField]
     private SpriteRenderer _renderer;
 
@@ -22,15 +22,13 @@ public class HealItem : Item, IItemEffect
 
     public void ApplyEffect(PlayerController player)
     {
-         player.Heal(value);
+        player.SpeedChangeTemporary(speedDown);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Trigger entered: " + other.name);
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player detected!");
             var player = other.GetComponent<PlayerController>();
             if (player != null)
             {

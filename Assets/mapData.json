@@ -1,1 +1,200 @@
-{"MapData":[{"Difficulty":0,"GroundData":[{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true}],"GroundObjectData":[{"skin":0,"value":0.0,"position":0,"type":0,"Position":0}]},{"Difficulty":0,"GroundData":[{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":false},{"Skin":0,"IsActive":false},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":false},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":false},{"Skin":0,"IsActive":false},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true},{"Skin":0,"IsActive":true}],"GroundObjectData":[{"skin":0,"value":0.0,"position":0,"type":0,"Position":0}]}]}
+﻿{
+  "MapData": [
+    {
+      "Difficulty": 0,
+      "GroundData": [
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        }
+      ],
+      "GroundObjectData": [
+        {
+          "skin": 0,
+          "value": 1.0,
+          "position": 0,
+          "type": 0,
+          "Position": 0
+        }
+      ]
+    },
+    {
+      "Difficulty": 0,
+      "GroundData": [
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": false
+        },
+        {
+          "Skin": 0,
+          "IsActive": false
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": false
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": false
+        },
+        {
+          "Skin": 0,
+          "IsActive": false
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        },
+        {
+          "Skin": 0,
+          "IsActive": true
+        }
+      ],
+      "GroundObjectData": [
+        {
+          "skin": 0,
+          "value": 1.0,
+          "position": 0,
+          "type": 0,
+          "Position": 0
+        }
+      ]
+    }
+  ]
+}

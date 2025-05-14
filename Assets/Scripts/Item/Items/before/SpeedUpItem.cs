@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpeedDownItem : Item, IItemEffect
+public class SpeedUpItem : Item, IItemEffect
 {
-    public float speedDown = -1.5f;
+    public float speedUp = 1.5f;
     [SerializeField]
     private SpriteRenderer _renderer;
 
@@ -22,7 +22,9 @@ public class SpeedDownItem : Item, IItemEffect
 
     public void ApplyEffect(PlayerController player)
     {
-        player.SpeedChange(speedDown);
+     
+        player.SpeedChangeTemporary(speedUp); 
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)

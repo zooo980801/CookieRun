@@ -20,36 +20,9 @@ public class PlayerController : Unit
     private bool wasGroundedLastFrame = false;
 
     public float CurrentHp => Hp;
-    /*private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Coin"))
-        {
-            GameManager.Instance.AddScore(10);
-            SFXManager.Instance.CoinSFX();
 
-            if (tutorialManager != null && tutorialManager.IsCurrentStep(TutorialStep.CollectCoin))
-            {
-                tutorialManager.AdvanceStep();
-            }
-
-            Destroy(other.gameObject);
-            return;
-        }
-       
-        if (isGodMode || isDead) return;
-
-        if (other.CompareTag("Enemy") || other.CompareTag("Obstacle"))
-        {
-            SFXManager.Instance.HitSFX();
-            TakeDamage(hitDamage);
-
-            if (tutorialManager != null && tutorialManager.IsCurrentStep(TutorialStep.TakeDamage))
-            {
-                tutorialManager.AdvanceStep();
-            }
-        }
-        
-    }*/
+    private float defaultSpeed;
+    private Coroutine speedCoroutine;
 
     private void TakeDamage(float amount)
     {
@@ -105,8 +78,9 @@ public class PlayerController : Unit
     {
         base.Awake();
         Hp = 100f;
-        JumpForce = 5f;
-        Speed = 5f;
+        JumpForce = 6f;
+        Speed = 4f;
+        defaultSpeed = Speed;
 
         tutorialManager = FindObjectOfType<TutorialManager>();
     }
@@ -217,7 +191,6 @@ public class PlayerController : Unit
         Hp -= damageByTime * Time.deltaTime;
         
     }
-
     public void Heal(float amount)
     {
         if (100f - Hp < amount)
@@ -231,8 +204,39 @@ public class PlayerController : Unit
 
     }
 
-    public void SpeedChange(float amount)
+    public void SpeedChangeTemporary(float amount, float duration = 2f)
     {
-        Speed += amount;
+        if (speedCoroutine != null)
+            StopCoroutine(speedCoroutine);
+
+        speedCoroutine = StartCoroutine(TemporarySpeedChange(amount, duration));
     }
+
+    private IEnumerator TemporarySpeedChange(float amount, float duration)
+    {
+        Speed = defaultSpeed + amount;
+
+        yield return new WaitForSeconds(duration);
+
+        Speed = defaultSpeed;
+    }
+
+    public void Damaged(float amount)
+    {
+        if (isGodMode || isDead) return; // 무적 또는 죽었으면 무시
+
+        Hp -= amount;
+
+        if (Hp <= 0)
+        {
+            Hp = 0;
+            isDead = true;
+            GameManager.Instance.GameOver();
+            return;
+        }
+
+        ActivateGodMode(GameManager.Instance.playerGodMode);
+        Debug.Log($"체력: {Hp} (무적 모드 활성화됨)");
+    }
+
 }

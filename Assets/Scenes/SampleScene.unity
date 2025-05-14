@@ -291,8 +291,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 636, y: 406}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 786.69415, y: 406}
+  m_SizeDelta: {x: 106.6117, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &41741645
 MonoBehaviour:
@@ -348,7 +348,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2987,6 +2987,81 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &766557584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 766557585}
+  - component: {fileID: 766557587}
+  - component: {fileID: 766557586}
+  m_Layer: 5
+  m_Name: CoinSprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &766557585
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766557584}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1718757933}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 712, y: 405}
+  m_SizeDelta: {x: 30, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &766557586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766557584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 31047bee51cceba479475e33769ed172, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &766557587
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766557584}
+  m_CullTransparentMesh: 1
 --- !u!1 &788178231
 GameObject:
   m_ObjectHideFlags: 0
@@ -3828,57 +3903,6 @@ MonoBehaviour:
   exitButton: {fileID: 1283841331}
   scoreText: {fileID: 184050189}
   CoinScoreText: {fileID: 2046425762}
---- !u!1 &1166713472
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1166713474}
-  - component: {fileID: 1166713473}
-  m_Layer: 0
-  m_Name: ItemManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1166713473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1166713472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af4e7f1f36e88794fb7085495a47764b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinPrefab: {fileID: 4397843028230357632, guid: cca33de6fd2fb434bba0c1b2712b6aca, type: 3}
-  healItemPrefab: {fileID: 936471770249398814, guid: cae5ed393ac1b2d4ebce97b03685693a, type: 3}
-  speedUpPrefab: {fileID: 470964938979987682, guid: c8f47ecbfa77a99478e571873db212f9, type: 3}
-  speedDownPrefab: {fileID: 8650349551632361918, guid: 15854d04127dd8c4c94f2261aceaa516, type: 3}
-  groundManager: {fileID: 1177246897}
-  playerTransform: {fileID: 0}
-  spawnInterval: 5
---- !u!4 &1166713474
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1166713472}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1177246896
 GameObject:
   m_ObjectHideFlags: 0
@@ -3912,151 +3936,160 @@ MonoBehaviour:
     MapData:
     - Difficulty: 0
       GroundData:
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
       GroundObjectData:
       - skin: 0
-        value: 0
-        Position: {x: 0, y: 0, z: 0}
+        value: 10
+        Position: 10
         type: 0
         ObjectType: 0
+      - skin: 0
+        value: 1
+        Position: 12
+        type: 0
+        ObjectType: 1
+      - skin: 0
+        value: 2
+        Position: 14
+        type: 1
+        ObjectType: 1
+      - skin: 0
+        value: -1.5
+        Position: 16
+        type: 2
+        ObjectType: 1
+      - skin: 0
+        value: 1.5
+        Position: 18
+        type: 3
+        ObjectType: 1
     - Difficulty: 0
       GroundData:
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 0
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 0
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 0
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 0
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 0
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
       GroundObjectData:
       - skin: 0
-        value: 0
-        Position: {x: 0, y: 0, z: 0}
+        value: 10
+        Position: 10
+        type: 1
+        ObjectType: 0
+      - skin: 0
+        value: 1
+        Position: 12
         type: 0
+        ObjectType: 1
+      - skin: 0
+        value: 2
+        Position: 14
+        type: 1
+        ObjectType: 1
+      - skin: 0
+        value: -1.5
+        Position: 16
+        type: 2
+        ObjectType: 1
+      - skin: 0
+        value: 1.5
+        Position: 18
+        type: 3
+        ObjectType: 1
+    - Difficulty: 0
+      GroundData:
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      GroundObjectData:
+      - skin: 0
+        value: 10
+        Position: 10
+        type: 1
+        ObjectType: 0
+      - skin: 0
+        value: 1
+        Position: 12
+        type: 0
+        ObjectType: 1
+      - skin: 0
+        value: 2
+        Position: 14
+        type: 1
+        ObjectType: 1
+      - skin: 0
+        value: -1.5
+        Position: 16
+        type: 2
+        ObjectType: 1
+      - skin: 0
+        value: 1.5
+        Position: 18
+        type: 3
+        ObjectType: 1
+      - skin: 0
+        value: 10
+        Position: 19
+        type: 1
         ObjectType: 0
   groundPrefab: {fileID: 3636418211687590359, guid: 6512fcb316e394d42900ab040d0405dd, type: 3}
   initialGroundCount: 10
   groundPosX: -30
   groundXDistance: 20
-  spawnCount: 0
 --- !u!4 &1177246898
 Transform:
   m_ObjectHideFlags: 0
@@ -4323,8 +4356,8 @@ Transform:
   m_GameObject: {fileID: 1231695322}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -55.8, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -75, y: 0, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -4372,7 +4405,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -4386,7 +4419,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 7.698921}
+  m_Size: {x: 1, y: 10}
   m_EdgeRadius: 0
 --- !u!50 &1231695326
 Rigidbody2D:
@@ -4403,7 +4436,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -5205,6 +5238,7 @@ RectTransform:
   - {fileID: 359613380}
   - {fileID: 58890274}
   - {fileID: 282097758}
+  - {fileID: 766557585}
   - {fileID: 41741644}
   - {fileID: 1488088187}
   - {fileID: 1918799981}
@@ -5643,10 +5677,6 @@ PrefabInstance:
     - target: {fileID: 442805183299362298, guid: bff7fd056d1abd145a938e165d9012d2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2856946954897399389, guid: bff7fd056d1abd145a938e165d9012d2, type: 3}
-      propertyPath: isGrounded
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2856946954897399389, guid: bff7fd056d1abd145a938e165d9012d2, type: 3}
       propertyPath: damageByTime
@@ -6375,5 +6405,4 @@ SceneRoots:
   - {fileID: 749089932}
   - {fileID: 1872369397}
   - {fileID: 1177246898}
-  - {fileID: 1166713474}
   - {fileID: 1231695323}

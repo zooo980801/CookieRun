@@ -39,7 +39,7 @@ public class ObjectPool<T> where T : MonoBehaviour
             if (obj != null)
             {
                 obj.gameObject.SetActive(true);
-                Debug.Log($"{obj.name} 활성화 setActive true");
+                //Debug.Log($"{obj.name} 활성화 setActive true");
                 return obj;
             }
             else

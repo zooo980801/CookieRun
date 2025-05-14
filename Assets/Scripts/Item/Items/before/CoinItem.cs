@@ -25,7 +25,6 @@ public class CoinItem : Item
         GameManager.Instance.AddScore((int)value);
     }
 
-   
 
     private void OnTriggerEnter2D(Collider2D other)
     {
