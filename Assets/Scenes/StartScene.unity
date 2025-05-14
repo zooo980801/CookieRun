@@ -642,8 +642,6 @@ MonoBehaviour:
   allvolumePercent: {fileID: 65255091}
   bgmPercent: {fileID: 2013016856}
   sfxPercent: {fileID: 2045909390}
-  volumeSlider: {fileID: 2079498883}
-  volumePercent: {fileID: 2013016856}
 --- !u!1 &199411763
 GameObject:
   m_ObjectHideFlags: 0
@@ -6469,8 +6467,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Tutorial
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fb530e50985c19b4d8454c3f31827803, type: 2}
+  m_sharedMaterial: {fileID: 9072221416520388858, guid: fb530e50985c19b4d8454c3f31827803, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
