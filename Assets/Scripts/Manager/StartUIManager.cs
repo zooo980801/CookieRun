@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -18,6 +18,10 @@ public class StartUIManager : MonoBehaviour
     public void StartGame()
     {
         StartSceneManager.Instance.StartGame();
+    }
+    public void StartTutorial()
+    {
+        StartSceneManager.Instance.StartTutorial();
     }
 
     public void ShowOptionUI()
