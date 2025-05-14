@@ -8,7 +8,11 @@ public class GameUI : BaseUI
     [SerializeField] private Slider hpSlider;
     [SerializeField] private Button pauseButton;
     [SerializeField] private Button jumpButton;
-    [SerializeField] private Button SlideButton;
+    [SerializeField] private Button SlideButton; 
+    [SerializeField]private float scoreInterval = 1f;
+
+    private float scoreTimer = 0f;
+
     public static GameUI Instance;
 
     [SerializeField] private PlayerController playerController;
@@ -43,7 +47,16 @@ public class GameUI : BaseUI
     }
     private void Update()
     {
+
         UpdateHPSlider(playerController.CurrentHp);
+
+        scoreTimer += Time.deltaTime;
+        if (scoreTimer >= scoreInterval)
+        {
+            GameManager.Instance.AddScore(1); // 1점 추가
+            scoreTimer = 0f;
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (pauseActive == false)
