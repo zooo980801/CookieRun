@@ -50,6 +50,10 @@ public class UIManager : MonoBehaviour
     public void ShowPauseUI()
     {
         GameManager.Instance.PauseGame();
+        if(pauseUI == null)
+        {
+            Debug.LogError("연결안됨");
+        }
         pauseUI.gameObject.SetActive(true);
         pauseUI.UpdateScore();
     }

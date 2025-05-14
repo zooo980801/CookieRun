@@ -20,41 +20,9 @@ public class PlayerController : Unit
     private bool wasGroundedLastFrame = false;
 
     public float CurrentHp => Hp;
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Coin"))
-        {
-            GameManager.Instance.AddScore(10);
-            SFXManager.Instance.CoinSFX();
 
-            if (tutorialManager != null && tutorialManager.IsCurrentStep(TutorialStep.CollectCoin))
-            {
-                tutorialManager.AdvanceStep();
-            }
-
-            Destroy(other.gameObject);
-            return;
-        }
-
-        if (other.CompareTag("Potion"))
-        {
-            Heal(30); // 예시: 체력 30 회복
-            Destroy(other.gameObject);
-            return;
-        }
-        if (isGodMode || isDead) return;
-
-        if (other.CompareTag("Enemy") || other.CompareTag("Obstacle"))
-        {
-            SFXManager.Instance.HitSFX();
-            TakeDamage(hitDamage);
-
-            if (tutorialManager != null && tutorialManager.IsCurrentStep(TutorialStep.TakeDamage))
-            {
-                tutorialManager.AdvanceStep();
-            }
-        }
-    }
+    private float defaultSpeed;
+    private Coroutine speedCoroutine;
 
     private void TakeDamage(float amount)
     {
@@ -110,8 +78,9 @@ public class PlayerController : Unit
     {
         base.Awake();
         Hp = 100f;
-        JumpForce = 5f;
-        Speed = 5f;
+        JumpForce = 6f;
+        Speed = 4f;
+        defaultSpeed = Speed;
 
         tutorialManager = FindObjectOfType<TutorialManager>();
     }
@@ -216,15 +185,52 @@ public class PlayerController : Unit
             yield return new WaitForSeconds(0.1f);
         }
     }
-    private void Heal(float amount)
-    {
-        Hp = Mathf.Min(Hp + amount, fullHP);
-        Debug.Log("체력 회복됨: " + amount + ", 현재 체력: " + Hp);
-    }
     public override void DecreaseHpByTime()
     {
         //시간에 따른 체력 감소
         Hp -= damageByTime * Time.deltaTime;
         
+    }
+    public void Heal(float amount)
+    {
+        if (100f - Hp < amount)
+        {
+            Hp += amount - (100f - Hp);
+        }
+        else
+        {
+            Hp += amount;
+        }
+
+    }
+
+    public void SpeedChangeTemporary(float amount, float duration = 2f)
+    {
+        if (speedCoroutine != null)
+            StopCoroutine(speedCoroutine);
+
+        speedCoroutine = StartCoroutine(TemporarySpeedChange(amount, duration));
+    }
+
+    private IEnumerator TemporarySpeedChange(float amount, float duration)
+    {
+        Speed = defaultSpeed + amount;
+
+        yield return new WaitForSeconds(duration);
+
+        Speed = defaultSpeed;
+    }
+
+    public void Damaged(float amount)
+    {
+        if (Hp > 0)
+        {
+            Hp -= amount;
+        }
+        else
+        {
+            Hp = 0;
+        }
+        Debug.Log(Hp);
     }
 }

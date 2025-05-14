@@ -6,8 +6,8 @@ TagManager:
   tags:
   - Coin
   - Obstacle
-  - Enemy
-  - Potion
+  - Ground
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -19,8 +19,8 @@ TagManager:
   - Item
   - Coin
   - Obstacle
-  - Enemy
-  - Potion
+  - 
+  - 
   - 
   - 
   - 
