@@ -108,7 +108,7 @@ public class PlayerController : Unit
         base.Awake();
         Hp = 100f;
         JumpForce = 6f;
-        Speed = 5f;
+        Speed = 4f;
         defaultSpeed = Speed;
 
         tutorialManager = FindObjectOfType<TutorialManager>();
