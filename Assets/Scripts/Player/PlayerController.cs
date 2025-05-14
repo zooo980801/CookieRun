@@ -24,35 +24,6 @@ public class PlayerController : Unit
     private float defaultSpeed;
     private Coroutine speedCoroutine;
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Coin"))
-        {
-            GameManager.Instance.AddScore(10);
-            SFXManager.Instance.CoinSFX();
-
-            if (tutorialManager != null && tutorialManager.IsCurrentStep(TutorialStep.CollectCoin))
-            {
-                tutorialManager.AdvanceStep();
-            }
-
-            Destroy(other.gameObject);
-            return;
-        }
-        if (isGodMode || isDead) return;
-
-        if (other.CompareTag("Enemy") || other.CompareTag("Obstacle"))
-        {
-            SFXManager.Instance.HitSFX();
-            TakeDamage(hitDamage);
-
-            if (tutorialManager != null && tutorialManager.IsCurrentStep(TutorialStep.TakeDamage))
-            {
-                tutorialManager.AdvanceStep();
-            }
-        }
-    }
-
     private void TakeDamage(float amount)
     {
         Hp -= amount;
