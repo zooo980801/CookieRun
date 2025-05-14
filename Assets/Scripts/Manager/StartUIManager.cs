@@ -22,6 +22,10 @@ public class StartUIManager : MonoBehaviour
     {
         StartSceneManager.Instance.StartGame();
     }
+    public void StartTutorial()
+    {
+        StartSceneManager.Instance.StartTutorial();
+    }
 
     public void ShowOptionUI()
     {

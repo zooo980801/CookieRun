@@ -4900,7 +4900,7 @@ GameObject:
   - component: {fileID: 6373519040315443307}
   m_Layer: 0
   m_Name: Player_StartScene
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

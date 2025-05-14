@@ -9,6 +9,7 @@ public class GameUI : BaseUI
     [SerializeField] private Button pauseButton;
     [SerializeField] private Button jumpButton;
     [SerializeField] private Button SlideButton;
+    public static GameUI Instance;
 
     [SerializeField] private PlayerController playerController;
 
@@ -27,7 +28,15 @@ public class GameUI : BaseUI
     {
         UpdateHPSlider(1); 
     }
+    private void Awake()
+    {
+        Instance = this;
+    }
 
+    public bool IsSlidePressed()
+    {
+        return slideActive;
+    }
     public void UpdateHPSlider(float hp)
     {
         hpSlider.value = hp /100f;
@@ -81,13 +90,26 @@ public class GameUI : BaseUI
 
     public void OnJumpButtonDown()
     {
-        playerController.Jump(); // ← 점프 제한은 내부에서 currentJumpCount로 처리함
+        playerController.Jump(); // 점프
+        if (TutorialManager.Instance != null && TutorialManager.Instance.IsCurrentStep(TutorialStep.Jump))
+        {
+            TutorialManager.Instance.UnlockStep(); // 멈춤 해제
+            TutorialManager.Instance.AdvanceStep();
+        }
     }
 
     public void OnSlideButtonDown()
     {
+
         slideActive = true;
+
+        if (TutorialManager.Instance != null && TutorialManager.Instance.IsCurrentStep(TutorialStep.Slide))
+        {
+            TutorialManager.Instance.UnlockStep();
+            TutorialManager.Instance.AdvanceStep();
+        }
     }
+
 
     public void OnSlideButtonUp()
     {

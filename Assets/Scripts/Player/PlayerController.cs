@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerController : Unit
 {
+    private TutorialManager tutorialManager;
+
     private bool isGodMode = false;
     private float godModeTimer = 0f;
     private bool isDead = false;
@@ -24,6 +26,12 @@ public class PlayerController : Unit
         {
             GameManager.Instance.AddScore(10);
             SFXManager.Instance.CoinSFX();
+
+            if (tutorialManager != null && tutorialManager.IsCurrentStep(TutorialStep.CollectCoin))
+            {
+                tutorialManager.AdvanceStep();
+            }
+
             Destroy(other.gameObject);
             return;
         }
@@ -33,6 +41,11 @@ public class PlayerController : Unit
         {
             SFXManager.Instance.HitSFX();
             TakeDamage(hitDamage);
+
+            if (tutorialManager != null && tutorialManager.IsCurrentStep(TutorialStep.TakeDamage))
+            {
+                tutorialManager.AdvanceStep();
+            }
         }
     }
 
@@ -92,6 +105,8 @@ public class PlayerController : Unit
         Hp = 100f;
         JumpForce = 5f;
         Speed = 5f;
+
+        tutorialManager = FindObjectOfType<TutorialManager>();
     }
 
     private void Update()
@@ -105,24 +120,34 @@ public class PlayerController : Unit
 
         if (isGrounded && !wasGroundedLastFrame)
         {
-            Debug.Log("진짜 착지! 점프 카운트 리셋");
             currentJumpCount = 0;
         }
         wasGroundedLastFrame = isGrounded;
         //점프
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Jump(); 
+            // 튜토리얼 단계 확인
+                Jump();
+                if (tutorialManager != null && tutorialManager.IsCurrentStep(TutorialStep.Jump))
+                {
+                    tutorialManager.AdvanceStep();
+                }
+            
         }
 
         animCtrl.JumpAnim(isGrounded);
-        
+
         //슬라이드
-        PressedShift = Input.GetKey(KeyCode.LeftShift);
-        if (PressedShift)
+        // 현재 LeftShift 키 상태 체크
+        PressedShift = Input.GetKey(KeyCode.LeftShift) || GameUI.Instance?.IsSlidePressed() == true;
+        Slide(PressedShift);
+
+        if (PressedShift && tutorialManager != null && tutorialManager.IsCurrentStep(TutorialStep.Slide))
         {
-            Slide(PressedShift);
+            tutorialManager.AdvanceStep();
         }
+
+
 
         // 무적 시간 감소
         if (isGodMode)
@@ -135,7 +160,6 @@ public class PlayerController : Unit
             }
         }
     }
-
     private void FixedUpdate()
     {
         Move();
