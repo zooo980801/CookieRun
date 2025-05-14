@@ -92,6 +92,14 @@ public class GameManager : MonoBehaviour
             uiManager.UpdateScore(score, BestScore, coinCount);
         }
     }
+    public void AddDistanceScore(int value)
+    {
+        if (!isGameOver)
+        {
+            score += value;
+            uiManager.UpdateScore(score, BestScore, coinCount);
+        }
+    }
 
     public void GameOver()
     {

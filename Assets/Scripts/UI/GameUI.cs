@@ -53,7 +53,7 @@ public class GameUI : BaseUI
         scoreTimer += Time.deltaTime;
         if (scoreTimer >= scoreInterval)
         {
-            GameManager.Instance.AddScore(1); // 1점 추가
+            GameManager.Instance.AddDistanceScore(1); // 1점 추가
             scoreTimer = 0f;
         }
 
