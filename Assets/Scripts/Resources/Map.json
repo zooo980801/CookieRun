@@ -1,0 +1,25 @@
+{
+    "MapData": [
+        {
+            "Code": 0,
+            "IsSpecial": false,
+            "Type": 0,
+            "NextCode": -1,
+            "GroundLength": 10,
+            "GroundSkin": [ 0, 0, 0, 1, 0, 1, 0, 1, 1, 1 ],
+            "GroundObjectData": [
+                {
+                    "Skin": 0,
+                    "Value": 1,
+                    "Position": {
+                        "x": 0,
+                        "y": 0.5,
+                        "z": 0
+                    },
+                    "Type": 0,
+                    "ObjectType": 0
+                }
+            ]
+        }
+    ]
+}
