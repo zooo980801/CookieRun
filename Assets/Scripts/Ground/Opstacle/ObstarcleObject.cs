@@ -39,6 +39,7 @@ public class ObstarcleObject : Item
         Debug.Log("Trigger entered: " + other.transform.name);
         if (other.CompareTag("Player"))
         {
+            SFXManager.Instance.HitSFX();
             Debug.Log("Player detected!");
             var player = other.transform.GetComponent<PlayerController>();
             if (player != null)
