@@ -34,10 +34,10 @@ public class ObstarcleObject : Item
         }
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Trigger entered: " + other.transform.name);
-        if (other.transform.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             Debug.Log("Player detected!");
             var player = other.transform.GetComponent<PlayerController>();

@@ -260,6 +260,6 @@ public class PlayerController : Unit
         {
             Hp = 0;
         }
-
+        Debug.Log(Hp);
     }
 }
