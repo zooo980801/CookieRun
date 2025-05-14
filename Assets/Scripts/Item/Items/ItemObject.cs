@@ -16,17 +16,11 @@ public class ItemObject : Item, IItemEffect
         set { data = value; }
     }
 
-    void Start()
-    {
-        _renderer = GetComponent<SpriteRenderer>();
-    }
 
     public override void Initialize(GroundObjectData data)
     {
-        _data = data;
-        _renderer.sprite = spriteImages[data.skin];
-
-        transform.localPosition = new Vector3(transform.localPosition.x, data.PositionY + 1, 0);
+        this._data = data;
+        _renderer.sprite = spriteImages[data.type];
     }
 
     public void ApplyEffect(PlayerController player)
@@ -35,6 +29,7 @@ public class ItemObject : Item, IItemEffect
         {
             case 0:
                 {
+                    Debug.Log("코인 값:" + _data.value);
                     GameManager.Instance.AddScore((int)_data.value);
                     break;
                 }
@@ -57,7 +52,23 @@ public class ItemObject : Item, IItemEffect
         this.gameObject.SetActive(false);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("Trigger entered: " + other.name);
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Player detected!");
+            var player = other.GetComponent<PlayerController>();
+            SFXManager.Instance.CoinSFX();
+            if (player != null)
+            {
+                ApplyEffect(player);
+                gameObject.SetActive(false);
+            }
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
     {
         Debug.Log("Trigger entered: " + other.transform.name);
         if (other.transform.CompareTag("Player"))
@@ -71,5 +82,4 @@ public class ItemObject : Item, IItemEffect
             }
         }
     }
-
 }
