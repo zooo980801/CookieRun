@@ -22,7 +22,7 @@ public class HealItem : Item, IItemEffect
 
     public void ApplyEffect(PlayerController player)
     {
-         player.Heal(value);
+        player.Heal(value);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

@@ -23,8 +23,6 @@ public class GroundManager : MonoBehaviour
     private float groundPosX;
     [SerializeField]
     private float groundXDistance;
-    [SerializeField]
-    private int spawnCount;
 
     //추가된 내용
     private List<GroundObject> activeGrounds = new List<GroundObject>();
@@ -34,13 +32,12 @@ public class GroundManager : MonoBehaviour
         groundPool = new ObjectPool<GroundObject>(groundPrefab, initialGroundCount);
         SpawnEvent += SpawnTile;
         DeSpawnEvent += DeSpawnTile;
-        spawnCount = 0;
         Initialize();
     }
 
     public void Initialize()
     {
-        for(int i=0; i < initialGroundCount-1 ; i++)
+        for (int i = 0; i < initialGroundCount - 1; i++)
         {
             Spawn();
         }
@@ -86,7 +83,7 @@ public class GroundManager : MonoBehaviour
     void SaveDataToJson()
     {
         string @json = JsonUtility.ToJson(_mapData);
-        string path =  Path.Combine(Application.dataPath,"mapData.json");
+        string path = Path.Combine(Application.dataPath, "mapData.json");
 
         File.WriteAllText(path, @json);
         Debug.Log(path);

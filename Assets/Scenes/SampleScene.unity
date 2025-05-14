@@ -3827,56 +3827,6 @@ MonoBehaviour:
   exitButton: {fileID: 1283841331}
   scoreText: {fileID: 184050189}
   CoinScoreText: {fileID: 2046425762}
---- !u!1 &1166713472
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1166713474}
-  - component: {fileID: 1166713473}
-  m_Layer: 0
-  m_Name: ItemManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1166713473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1166713472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af4e7f1f36e88794fb7085495a47764b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinPrefab: {fileID: 4397843028230357632, guid: cca33de6fd2fb434bba0c1b2712b6aca, type: 3}
-  healItemPrefab: {fileID: 936471770249398814, guid: cae5ed393ac1b2d4ebce97b03685693a, type: 3}
-  speedUpPrefab: {fileID: 470964938979987682, guid: c8f47ecbfa77a99478e571873db212f9, type: 3}
-  speedDownPrefab: {fileID: 8650349551632361918, guid: 15854d04127dd8c4c94f2261aceaa516, type: 3}
-  groundManager: {fileID: 1177246897}
-  spawnInterval: 5
---- !u!4 &1166713474
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1166713472}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1177246896
 GameObject:
   m_ObjectHideFlags: 0
@@ -3910,151 +3860,160 @@ MonoBehaviour:
     MapData:
     - Difficulty: 0
       GroundData:
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
       GroundObjectData:
       - skin: 0
-        value: 0
-        Position: {x: 0, y: 0, z: 0}
+        value: 10
+        Position: 10
         type: 0
         ObjectType: 0
+      - skin: 0
+        value: 1
+        Position: 12
+        type: 0
+        ObjectType: 1
+      - skin: 0
+        value: 2
+        Position: 14
+        type: 1
+        ObjectType: 1
+      - skin: 0
+        value: -1.5
+        Position: 16
+        type: 2
+        ObjectType: 1
+      - skin: 0
+        value: 1.5
+        Position: 18
+        type: 3
+        ObjectType: 1
     - Difficulty: 0
       GroundData:
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 0
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 0
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 0
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 0
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 0
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
-      - Skin: 0
-        Position: {x: 0, y: 0, z: 0}
-        IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
       GroundObjectData:
       - skin: 0
-        value: 0
-        Position: {x: 0, y: 0, z: 0}
+        value: 10
+        Position: 10
+        type: 1
+        ObjectType: 0
+      - skin: 0
+        value: 1
+        Position: 12
         type: 0
+        ObjectType: 1
+      - skin: 0
+        value: 2
+        Position: 14
+        type: 1
+        ObjectType: 1
+      - skin: 0
+        value: -1.5
+        Position: 16
+        type: 2
+        ObjectType: 1
+      - skin: 0
+        value: 1.5
+        Position: 18
+        type: 3
+        ObjectType: 1
+    - Difficulty: 0
+      GroundData:
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      - IsActive: 1
+      GroundObjectData:
+      - skin: 0
+        value: 10
+        Position: 10
+        type: 1
+        ObjectType: 0
+      - skin: 0
+        value: 1
+        Position: 12
+        type: 0
+        ObjectType: 1
+      - skin: 0
+        value: 2
+        Position: 14
+        type: 1
+        ObjectType: 1
+      - skin: 0
+        value: -1.5
+        Position: 16
+        type: 2
+        ObjectType: 1
+      - skin: 0
+        value: 1.5
+        Position: 18
+        type: 3
+        ObjectType: 1
+      - skin: 0
+        value: 10
+        Position: 19
+        type: 1
         ObjectType: 0
   groundPrefab: {fileID: 3636418211687590359, guid: 6512fcb316e394d42900ab040d0405dd, type: 3}
   initialGroundCount: 10
   groundPosX: -30
   groundXDistance: 20
-  spawnCount: 0
 --- !u!4 &1177246898
 Transform:
   m_ObjectHideFlags: 0
@@ -6295,5 +6254,4 @@ SceneRoots:
   - {fileID: 749089932}
   - {fileID: 1872369397}
   - {fileID: 1177246898}
-  - {fileID: 1166713474}
   - {fileID: 1231695323}

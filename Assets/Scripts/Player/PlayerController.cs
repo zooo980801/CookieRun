@@ -82,10 +82,10 @@ public class PlayerController : Unit
     private void Update()
     {
         DecreaseHpByTime();
-        
+
         //땅에 오브젝트가 닿았는지 확인
         isGrounded = Physics2D.Raycast(transform.position, Vector2.down, groundRayLength, groundLayer);
-        
+
         //점프
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
@@ -93,7 +93,7 @@ public class PlayerController : Unit
         }
 
         animCtrl.JumpAnim(isGrounded);
-        
+
         //슬라이드
         PressedShift = Input.GetKey(KeyCode.LeftShift);
         if (PressedShift)
@@ -155,7 +155,7 @@ public class PlayerController : Unit
     {
         //시간에 따른 체력 감소
         Hp -= damageByTime * Time.deltaTime;
-        
+
     }
 
     public void Heal(float amount)
@@ -174,5 +174,17 @@ public class PlayerController : Unit
     public void SpeedChange(float amount)
     {
         Speed += amount;
+    }
+
+    public void Damaged(float amount)
+    {
+        if (Hp > 0)
+        {
+            Hp -= amount;
+        }
+        else
+        {
+            Hp = 0;
+        }
     }
 }
