@@ -223,14 +223,20 @@ public class PlayerController : Unit
 
     public void Damaged(float amount)
     {
-        if (Hp > 0)
-        {
-            Hp -= amount;
-        }
-        else
+        if (isGodMode || isDead) return; // 무적 또는 죽었으면 무시
+
+        Hp -= amount;
+
+        if (Hp <= 0)
         {
             Hp = 0;
+            isDead = true;
+            GameManager.Instance.GameOver();
+            return;
         }
-        Debug.Log(Hp);
+
+        ActivateGodMode(GameManager.Instance.playerGodMode);
+        Debug.Log($"체력: {Hp} (무적 모드 활성화됨)");
     }
+
 }
