@@ -32,7 +32,7 @@ public class ObjectPool<T> where T : MonoBehaviour
 
     public T GetObject()
     {
-        while(pool.Count > 0)
+        while (pool.Count > 0)
         {
             T obj = pool.Pop();
 
@@ -42,11 +42,14 @@ public class ObjectPool<T> where T : MonoBehaviour
                 Debug.Log($"{obj.name} 활성화 setActive true");
                 return obj;
             }
+            else
+            {
+                Debug.LogWarning("풀에서 꺼낸 객체가 null입니다. 새 객체를 생성합니다.");
+            }
         }
 
         return CreateNewObject();
     }
-
     public void ReturnObject(T obj)
     {
         if (obj != null)

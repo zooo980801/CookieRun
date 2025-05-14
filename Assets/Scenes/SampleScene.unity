@@ -3860,6 +3860,7 @@ MonoBehaviour:
   healItemPrefab: {fileID: 936471770249398814, guid: cae5ed393ac1b2d4ebce97b03685693a, type: 3}
   speedUpPrefab: {fileID: 470964938979987682, guid: c8f47ecbfa77a99478e571873db212f9, type: 3}
   speedDownPrefab: {fileID: 8650349551632361918, guid: 15854d04127dd8c4c94f2261aceaa516, type: 3}
+  groundManager: {fileID: 1177246897}
   spawnInterval: 5
 --- !u!4 &1166713474
 Transform:

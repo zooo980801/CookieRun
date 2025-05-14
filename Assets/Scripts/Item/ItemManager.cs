@@ -21,6 +21,8 @@ public class ItemManager : MonoBehaviour
     public ObjectPool<SpeedUpItem> speedUpPool;
     public ObjectPool<SpeedDownItem> speedDownPool;
 
+    [SerializeField] private GroundManager groundManager;
+
     public float spawnInterval = 5f;  // 주기적인 아이템 생성 주기
     private float timeSinceLastSpawn = 0f;
 
@@ -46,36 +48,40 @@ public class ItemManager : MonoBehaviour
 
     void SpawnRandomItem()
     {
-        
-        ItemType randomItem = (ItemType)Random.Range(0, 4);
 
-        Vector3 spawnPosition = new Vector3(
-            Random.Range(-10f, 10f), 
-            0f,                      
-            Random.Range(-10f, 10f)  
+        var activeGrounds = groundManager.GetActiveGrounds();
+        if (activeGrounds == null || activeGrounds.Count == 0) return;
+
+        var randomGround = activeGrounds[Random.Range(0, activeGrounds.Count)];
+        Vector3 spawnPos = new Vector3(
+            randomGround.transform.position.x + Random.Range(-1f, 1f),
+            randomGround.transform.position.y + 0.5f,
+            0
         );
+
+        ItemType randomItem = (ItemType)Random.Range(0, 4);
 
         // 아이템을 풀에서 꺼내서 배치
         switch (randomItem)
         {
             case ItemType.Coin:
                 var coin = coinPool.GetObject();
-                coin.transform.position = spawnPosition;
+                coin.transform.position = spawnPos;
                 break;
             case ItemType.Heal:
                 var heal = healPool.GetObject();
-                heal.transform.position = spawnPosition;
+                heal.transform.position = spawnPos;
                 break;
             case ItemType.SpeedUp:
                 var speedUp = speedUpPool.GetObject();
-                speedUp.transform.position = spawnPosition;
+                speedUp.transform.position = spawnPos;
                 break;
             case ItemType.SpeedDown:
                 var speedDown = speedDownPool.GetObject();
-                speedDown.transform.position = spawnPosition;
+                speedDown.transform.position = spawnPos;
                 break;
         }
 
-        Debug.Log("아이템 생성: " + randomItem.ToString() + " 위치: " + spawnPosition);
+        Debug.Log("아이템 생성: " + randomItem.ToString() + " 위치: " + spawnPos);
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEngine;
@@ -24,6 +25,10 @@ public class GroundManager : MonoBehaviour
     private float groundXDistance;
     [SerializeField]
     private int spawnCount;
+
+    //추가된 내용
+    private List<GroundObject> activeGrounds = new List<GroundObject>();
+
     private void Start()
     {
         groundPool = new ObjectPool<GroundObject>(groundPrefab, initialGroundCount);
@@ -60,19 +65,21 @@ public class GroundManager : MonoBehaviour
         @Go.transform.position = new Vector3(groundPosX, -2.56f, 0);
 
         groundPosX += groundXDistance;
+
+        if (!activeGrounds.Contains(@Go))
+            activeGrounds.Add(@Go);
     }
 
     public void DeSpawnTile(GameObject obj)
     {
         Debug.Log("디스폰");
-        groundPool.ReturnObject(obj.GetComponent<GroundObject>());
+        var @Go = obj.GetComponent<GroundObject>();
+        if (activeGrounds.Contains(@Go))
+            activeGrounds.Remove(@Go);
+
+        groundPool.ReturnObject(@Go);
         Spawn();
     }
-
-
-
-
-
 
     //// 클래스 json으로 바로 꺼내기
     [ContextMenu("데이터 json 저장")]
@@ -83,5 +90,11 @@ public class GroundManager : MonoBehaviour
 
         File.WriteAllText(path, @json);
         Debug.Log(path);
+    }
+
+    //추가된 내용
+    public List<GroundObject> GetActiveGrounds()
+    {
+        return activeGrounds;
     }
 }
