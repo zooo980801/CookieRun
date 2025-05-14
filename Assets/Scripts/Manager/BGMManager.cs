@@ -64,4 +64,9 @@ public class BGMManager : MonoBehaviour
         audioSource.Stop();
         audioSource.clip = null;
     }
+
+    public void SetVolume(float volume)
+    {
+        audioSource.volume = volume;
+    }
 }

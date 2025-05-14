@@ -11,6 +11,7 @@ public class SFXManager : MonoBehaviour
     public AudioClip jumpClip;
 
     private AudioSource audioSource;
+    
 
     public static SFXManager Instance;
 
@@ -42,5 +43,10 @@ public class SFXManager : MonoBehaviour
     public void JumpSFX()
     {
         audioSource.PlayOneShot(jumpClip);
+    }
+
+    public void SetVolume(float volume)
+    {
+        audioSource.volume = volume;
     }
 }
