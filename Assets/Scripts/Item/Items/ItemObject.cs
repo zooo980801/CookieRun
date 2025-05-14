@@ -23,6 +23,7 @@ public class ItemObject : Item, IItemEffect
 
     public override void Initialize(GroundObjectData data)
     {
+        _data = data;
         _renderer.sprite = spriteImages[data.skin];
 
         transform.localPosition = new Vector3(transform.localPosition.x, data.PositionY + 1, 0);
@@ -56,7 +57,7 @@ public class ItemObject : Item, IItemEffect
         this.gameObject.SetActive(false);
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Trigger entered: " + other.transform.name);
         if (other.transform.CompareTag("Player"))
