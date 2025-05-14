@@ -30,7 +30,6 @@ public class ItemObject : Item, IItemEffect
             case 0:
                 {
                     GameManager.Instance.AddScore((int)_data.value);
-                    player.Heal(_data.value);
                     break;
                 }
             case 1:
@@ -59,6 +58,7 @@ public class ItemObject : Item, IItemEffect
         {
             Debug.Log("Player detected!");
             var player = other.GetComponent<PlayerController>();
+            SFXManager.Instance.CoinSFX();
             if (player != null)
             {
                 ApplyEffect(player);
