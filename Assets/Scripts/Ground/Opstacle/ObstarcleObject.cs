@@ -27,11 +27,11 @@ public class ObstarcleObject : Item
         this._data = data;
         if (data.type == 0) // 일반 장애물
         {
-            transform.localPosition = new Vector3(transform.position.x, originY, 0);
+            transform.localPosition = new Vector3(transform.localPosition.x, originY, 0);
         }
         if (data.type == 1) // 공중 장애물
         {
-            transform.localPosition = new Vector3(transform.position.x, originY + 1f, 0);
+            transform.localPosition = new Vector3(transform.localPosition.x, originY + 1f, 0);
         }
     }
 

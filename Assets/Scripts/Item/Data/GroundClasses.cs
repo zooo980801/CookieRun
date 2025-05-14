@@ -10,6 +10,7 @@ public class MapDataWrap
 [System.Serializable]
 public class MapData
 {
+    public int type;
     public int Difficulty;
     public List<GroundData> GroundData;
     public List<GroundObjectData> GroundObjectData;
@@ -27,6 +28,7 @@ public class GroundObjectData
     public int skin;
     public float value;
     public int Position;
+    public int PositionY;
     public int type;
     public int ObjectType;
 }

@@ -23,6 +23,8 @@ public class GroundManager : MonoBehaviour
     private float groundPosX;
     [SerializeField]
     private float groundXDistance;
+    [SerializeField]
+    private int groundCount;
 
     //추가된 내용
     private List<GroundObject> activeGrounds = new List<GroundObject>();
@@ -58,10 +60,18 @@ public class GroundManager : MonoBehaviour
         GroundObject @Go = groundPool.GetObject();
 
         System.Random random = new System.Random();
-        @Go.Initialize(_mapData.MapData[random.Next(_mapData.MapData.Count)]); //난이도 조절 시 x=>x.Difficult
-        @Go.transform.position = new Vector3(groundPosX, -2.56f, 0);
+
+        if (groundCount < 1)
+        {
+            @Go.Initialize(groundPosX, _mapData.MapData[0]); //난이도 조절 시 x=>x.Difficult
+        }
+        else
+        {
+            @Go.Initialize(groundPosX, _mapData.MapData[random.Next(_mapData.MapData.Count)]); //난이도 조절 시 x=>x.Difficult
+        }
 
         groundPosX += groundXDistance;
+        groundCount += 1;
 
         if (!activeGrounds.Contains(@Go))
             activeGrounds.Add(@Go);

@@ -14,7 +14,7 @@ public class GroundObject : Ground
         set { data = value; }
     }
 
-    public override void Initialize(MapData data)
+    public override void Initialize(float groundPosX, MapData data)
     {
         Debug.Log("땅 이니셜라이즈");
         this._data = data;
@@ -24,8 +24,28 @@ public class GroundObject : Ground
             itemPrefabs[i].gameObject.SetActive(false);
         }
 
+        float posY = -2.56f;
+        if (data.type == 0)
+        {
+            posY = -2.56f;
+        }
+        if (data.type == 1)
+        {
+            posY = -1.3f;
+        }
+
+        transform.position = new Vector3(groundPosX, posY, 0);
+        InitFloor();
         InitObstarcles();
         InitItems();
+    }
+
+    public void InitFloor()
+    {
+        for (var i = 0; i < groundPrefabs.Count; i++)
+        {
+            groundPrefabs[i].gameObject.SetActive(_data.GroundData[i].IsActive);
+        }
     }
 
     public void InitObstarcles()
