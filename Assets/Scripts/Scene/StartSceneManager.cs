@@ -21,4 +21,8 @@ public class StartSceneManager : MonoBehaviour
     {
         SceneLoader.LoadScene("SampleScene");
     }
+    public void StartTutorial()
+    {
+        SceneLoader.LoadScene("TutorialScene");
+    }
 }
