@@ -22,12 +22,12 @@ public class GroundSpawner : MonoBehaviour
         if(other.transform.CompareTag("Ground"))
         {
             groundManager.DeSpawn(other.transform.parent.gameObject);
-            Debug.Log("½ºÆ÷³Ê°¡ ±×¶ó¿îµå¿¡ ´êÀ½");
+            Debug.Log("ìŠ¤í¬ë„ˆê°€ ê·¸ë¼ìš´ë“œì— ë‹¿ìŒ");
         }
-        if (other.transform.CompareTag("StartGround"))
+        /*if (other.transform.CompareTag("StartGround"))
         {
             Destroy(other.gameObject);
-        }
+        }*/
     }
     private void Update()
     {
