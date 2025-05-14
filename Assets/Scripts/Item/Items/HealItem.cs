@@ -35,7 +35,7 @@ public class HealItem : Item, IItemEffect
             if (player != null)
             {
                 ApplyEffect(player);
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
     }

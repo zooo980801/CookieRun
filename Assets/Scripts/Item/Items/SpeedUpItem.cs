@@ -35,7 +35,7 @@ public class SpeedUpItem : Item, IItemEffect
             if (player != null)
             {
                 ApplyEffect(player);
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
     }

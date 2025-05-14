@@ -46,14 +46,13 @@ public class ItemManager : MonoBehaviour
 
     void SpawnRandomItem()
     {
-        // 랜덤 아이템 타입을 선택
-        ItemType randomItem = (ItemType)Random.Range(0, 4); // 0~3 (Coin~SpeedDown)
+        
+        ItemType randomItem = (ItemType)Random.Range(0, 4);
 
-        // 랜덤 위치 선택 (이 부분은 위치를 나중에 지정할 수 있도록 수정)
         Vector3 spawnPosition = new Vector3(
-            Random.Range(-10f, 10f), // 예시: X 범위
-            0f,                      // Y 값 고정
-            Random.Range(-10f, 10f)  // 예시: Z 범위
+            Random.Range(-10f, 10f), 
+            0f,                      
+            Random.Range(-10f, 10f)  
         );
 
         // 아이템을 풀에서 꺼내서 배치

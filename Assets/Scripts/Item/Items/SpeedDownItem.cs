@@ -33,7 +33,7 @@ public class SpeedDownItem : Item, IItemEffect
             if (player != null)
             {
                 ApplyEffect(player);
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
     }

@@ -33,7 +33,7 @@ public class CoinItem : Item
         if (other.CompareTag("Player"))
         {
             ApplyEffect();
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 

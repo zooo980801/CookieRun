@@ -32,24 +32,28 @@ public class ObjectPool<T> where T : MonoBehaviour
 
     public T GetObject()
     {
-        if(pool.Count > 0)
+        while(pool.Count > 0)
         {
             T obj = pool.Pop();
 
-            obj.gameObject.SetActive(true);
-            Debug.Log($"{obj.name} 활성화 setActive true");
-            return obj;
+            if (obj != null)
+            {
+                obj.gameObject.SetActive(true);
+                Debug.Log($"{obj.name} 활성화 setActive true");
+                return obj;
+            }
         }
-        else
-        {
-            return CreateNewObject();
-        }
+
+        return CreateNewObject();
     }
 
     public void ReturnObject(T obj)
     {
-        obj.gameObject.SetActive(false);
-        pool.Push(obj);
+        if (obj != null)
+        {
+            obj.gameObject.SetActive(false);
+            pool.Push(obj);
+        }
     }
 
 }
