@@ -62,7 +62,7 @@ Unity 기반 2D 런닝 액션 게임 – 장애물을 피하고 코인을 획득
 - C# (Visual Studio 2022)
 - GitHub / GitHub Desktop
 - VS Code
-
+![스크린샷 2025-05-14 141317](https://github.com/user-attachments/assets/1ae89fbf-d197-4ccc-9b0d-a02881c895f6)
 ---
 
 ## 🧪 트러블슈팅
@@ -76,3 +76,4 @@ Unity 기반 2D 런닝 액션 게임 – 장애물을 피하고 코인을 획득
 
 ```bash
 git clone https://github.com/your-repo/KnightRun.git
+
