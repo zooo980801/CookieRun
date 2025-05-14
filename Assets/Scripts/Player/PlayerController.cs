@@ -103,7 +103,7 @@ public class PlayerController : Unit
     {
         base.Awake();
         Hp = 100f;
-        JumpForce = 5f;
+        JumpForce = 6f;
         Speed = 5f;
 
         tutorialManager = FindObjectOfType<TutorialManager>();
