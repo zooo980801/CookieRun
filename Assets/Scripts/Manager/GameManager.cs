@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
     private UIManager uiManager;
     //UI 매니저 생성후 연결해주세요
 
+    private string fileName = "Data.json";
+
     public class ScoreData
     {
         public int bestScore;
@@ -92,6 +94,14 @@ public class GameManager : MonoBehaviour
             uiManager.UpdateScore(score, BestScore, coinCount);
         }
     }
+    public void AddDistanceScore(int value)
+    {
+        if (!isGameOver)
+        {
+            score += value;
+            uiManager.UpdateScore(score, BestScore, coinCount);
+        }
+    }
 
     public void GameOver()
     {
@@ -127,7 +137,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
     }
-    public void SaveBestScore()
+public void SaveBestScore()
     {
         if (score > BestScore)
         {
@@ -135,26 +145,25 @@ public class GameManager : MonoBehaviour
             ScoreData data = new ScoreData { bestScore = BestScore };
 
             string json = JsonUtility.ToJson(data, true);
-            string fullPath = Path.Combine(Application.dataPath, "Resources/Data.json");
+            string fullPath = Path.Combine(Application.persistentDataPath, fileName);
             File.WriteAllText(fullPath, json);
-
-#if UNITY_EDITOR
-            UnityEditor.AssetDatabase.Refresh(); // 에디터 상에서 바로 반영됨
-#endif
         }
     }
+
     private void LoadBestScore()
     {
-        TextAsset jsonText = Resources.Load<TextAsset>(dataPath);
-        if (jsonText != null)
+        string fullPath = Path.Combine(Application.persistentDataPath, fileName);
+        if (File.Exists(fullPath))
         {
-            ScoreData data = JsonUtility.FromJson<ScoreData>(jsonText.text);
+            string json = File.ReadAllText(fullPath);
+            ScoreData data = JsonUtility.FromJson<ScoreData>(json);
             BestScore = data.bestScore;
         }
         else
         {
-            Debug.LogWarning("Data.json 파일없음. 기본값 0 사용.");
+            Debug.LogWarning("저장된 점수 없음. 기본값 0 사용.");
             BestScore = 0;
         }
     }
+
 }

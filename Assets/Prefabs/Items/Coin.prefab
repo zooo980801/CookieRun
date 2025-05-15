@@ -197,5 +197,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f9b87ee033aab41b735289604b5200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 20
+  value: 10
   _renderer: {fileID: 0}

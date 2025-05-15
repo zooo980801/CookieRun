@@ -29,6 +29,7 @@ public class ItemObject : Item, IItemEffect
         {
             case 0:
                 {
+                    Debug.Log("코인 값:" + _data.value);
                     GameManager.Instance.AddScore((int)_data.value);
                     break;
                 }
@@ -81,5 +82,4 @@ public class ItemObject : Item, IItemEffect
             }
         }
     }
-
 }
