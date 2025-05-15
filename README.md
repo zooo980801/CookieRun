@@ -88,7 +88,7 @@ Unity 기반 2D 런닝 액션 게임 – 장애물을 피하고 코인을 획득
 |시작화면|메인화면|
 
 
-> [시연 영상 링크](#)
+> [시연 영상 링크](https://youtu.be/Px24P4rG1iQ?si=ZRGlSTcDZ1_G-bUs)
 
 
 
